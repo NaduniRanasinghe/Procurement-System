@@ -1,9 +1,20 @@
 import React, { Component } from 'react';
+import { Route , withRouter} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/styles.css';
 import '../assets/css/Header-Blue.css';
 
 class Home extends Component{
+
+    constructor(props) {
+        super(props)
+      
+        this.state = {
+        }
+      }
+    signinButtonHandler = () => {
+        this.props.history.push("/Login")
+    }
 
     render() {
         return(
@@ -38,8 +49,9 @@ class Home extends Component{
                                             className="form-control search-field" type="search" id="search-field"
                                             name="search"/></div>
                                     </form>
-                                    <span className="navbar-text"> <a className="login" href="https://www.sliit.lk">Log In</a></span><a
-                                    className="btn btn-light action-button" role="button" href="https://www.sliit.lk">Sign Up</a></div>
+                                    <span className="navbar-text"> <a className="login" role="button" onClick={this.signinButtonHandler}>Log In</a></span>
+                                    <a className="btn btn-light action-button" role="button" href="https://www.sliit.lk">Sign Up</a>
+                                </div>
                             </div>
                         </nav>
 
@@ -67,4 +79,4 @@ class Home extends Component{
 
 }
 
-export default Home;
+export default withRouter(Home);

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-
+// import {BrowserRouter as Router, Route,Switch,Link} from "react-router-dom";
+import { Route , withRouter} from 'react-router-dom';
 import '../App.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -8,9 +9,17 @@ import '../assets/css/Login-Form-Clean.css';
 import '../assets/css/Navigation-with-Button.css';
 import '../assets/css/Footer-Clean.css';
 
-
-
 class Header extends Component {
+    constructor(props) {
+        super(props)
+      
+        this.state = {
+        }
+      }
+    signinButtonHandler = () => {
+        this.props.history.push("/Login")
+    }
+
     render() {
         return (
             <div>
@@ -39,8 +48,7 @@ class Header extends Component {
                                             Item</a></div>
                                     </li>
                                 </ul>
-                                <span className="navbar-text actions"> <a className="btn btn-light action-button"
-                                                                          role="button" href="#">Sign In</a></span>
+                                <button type="button" className="btn btn-light action-button" onClick={this.signinButtonHandler}><span className="navbar-text actions">Sign In</span></button>
                             </div>
                         </div>
                     </nav>
@@ -52,9 +60,10 @@ class Header extends Component {
 
 
             </div>
+
         )
     }
 }
 
 
-export default Header;
+export default withRouter(Header);
