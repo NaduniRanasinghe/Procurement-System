@@ -8,7 +8,7 @@ class AddSupplier extends Component {
       super(props) 
      
       this.state = { 
-         sname:'', 
+         sName:'', 
          email:'', 
          password:'', 
          address:'', 
@@ -22,26 +22,15 @@ class AddSupplier extends Component {
         this.setState(state) 
     } 
  
-    componentDidMount() { 
-        axios.get(constant()+'/getcourse').then( 
-            data => { 
-                this.setState({ 
-                    Courses: data.data 
-                }) 
-            } 
-        ) 
-    } 
- 
- 
     submitHandler = (e) => { 
         e.preventDefault() 
         console.log(this.state) 
-        axios.post(constant()+'/save/supplier', this.state) 
+        axios.post(constant()+'/supplier/save', this.state) 
         .then(response => { 
             console.log(response) 
             if(response.data != ''){ 
-              alert(`User added . now you can log in to the system`); 
-              this.props.history.push("/") 
+              alert(`Supplier added successfully...`); 
+              this.props.history.push("/ProcumentDashBoard") 
             } 
              
         }) 
@@ -56,20 +45,20 @@ class AddSupplier extends Component {
     } 
      
   render() { 
-    const { sname, email, password, address, phone} = this.state; 
+    const { sName, email, password, address, phone} = this.state; 
     return ( 
         <div className="container"> 
             <div className="panel panel-default"> 
                 <div className="panel-heading"> 
                     <h3 className="panel-title"> 
-                         Supplier Registration 
+                         Supplier Registration12
                     </h3> 
                 </div> 
                 <div className="panel-body"> 
                 <form onSubmit={this.submitHandler}> 
                     <div className="form-group"> 
                         <label>Supplier Name:</label> 
-                        <input type='text' id="validationCustom01" className="form-control" name="sname" value={sname} onChange={this.changeHandler} placeholder="User name" pattern="^[a-zA-Z0-9_]+$" title="Enter supplier name is requird"/> 
+                        <input type='text' className="form-control" name="sName" value={sName} onChange={this.changeHandler} placeholder="User name"/> 
                     </div> 
                     <div className="form-group"> 
                         <label>Password:</label> 

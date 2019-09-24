@@ -8,7 +8,7 @@ import App from './App';
 import Login from './components/Login';
 import ProcumentDashBoard from './components/procurement/ProcurementDashBoard'
 import AddSupplier from './components/procurement/AddSupplier'
-import AddGoods from './components/procurement/AddGoods'
+import AddItem from './components/procurement/AddItem'
 ReactDOM.render(
     
     <Router>
@@ -17,7 +17,7 @@ ReactDOM.render(
             <Route  path='/Login' component={Login} />
             <Route  path='/ProcumentDashBoard' component={ProcumentDashBoard} />
             <Route  path='/AddSupplier' component={AddSupplier} />
-            <Route  path='/AddGoods' component={AddGoods} />
+            <Route  path='/AddItem' component={AddItem} />
         </div>
   </Router>
     

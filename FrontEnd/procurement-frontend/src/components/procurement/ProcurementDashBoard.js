@@ -20,7 +20,7 @@ class ProcumentDashBoard extends Component {
     } 
  
     itemButtonHandler = () => { 
-        this.props.history.push("/AddGoods") 
+        this.props.history.push("/AddItem") 
          
     } 
  
@@ -42,7 +42,7 @@ class ProcumentDashBoard extends Component {
           <div className="panel-body"> 
           <form onSubmit={this.submitHandler}> 
                 <button type="button" className="btn btn-outline-secondary registerBtn" onClick={this.supplierButtonHandler}>Supplier</button> 
-                <button type="button" className="btn btn-outline-secondary registerBtn" onClick={this.itemButtonHandler}>Goods</button> 
+                <button type="button" className="btn btn-outline-secondary registerBtn" onClick={this.itemButtonHandler}>Item</button> 
             </form> 
           </div> 
         </div> 
