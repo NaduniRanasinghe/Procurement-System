@@ -16,7 +16,7 @@ import javax.persistence.Transient;
  */
 @Entity
 @Table(name = "order_m")
-public class Order implements Serializable {
+public class Order {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,6 +28,12 @@ public class Order implements Serializable {
     
     @Column(name = "TOTAL_PRICE")
     private Integer totalPrice;
+    
+    @Column(name = "STATUS")
+    private String status;
+        
+    @Column(name = "REMARK")
+    private String remark;
     
     @Transient
     List<Item> itemList;
@@ -54,6 +60,22 @@ public class Order implements Serializable {
 
     public void setTotalPrice(Integer totalPrice) {
         this.totalPrice = totalPrice;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
     }
 
     public List<Item> getItemList() {

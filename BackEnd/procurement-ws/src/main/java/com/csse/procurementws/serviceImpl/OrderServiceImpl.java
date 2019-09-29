@@ -59,4 +59,7 @@ public class OrderServiceImpl {
         return newOrderList;
     }
     
+    public void setStatusOrder(Integer id,String status){
+        orderRepository.setStatusOrder(status , id);
+    }
 }

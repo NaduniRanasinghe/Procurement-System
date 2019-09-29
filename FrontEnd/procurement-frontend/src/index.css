@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.navBar_procument_dashboard {
+  /* background-color: #e3f2fd; */
+  background-color:#563d7c;
+}
+.navBarTitle_procument_dashboard {
+  color: white;
+  font-family:"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}

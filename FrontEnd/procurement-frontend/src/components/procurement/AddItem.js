@@ -53,6 +53,7 @@ class AddItem extends Component {
             console.log(response) 
             if(response.data != ''){ 
               alert(`Item added successfully...`); 
+              window.location.reload(); 
               this.props.history.push("/ProcumentDashBoard") 
             } 
              
@@ -93,7 +94,7 @@ class AddItem extends Component {
                                 }
                             </select>
                     </div> 
-                    <button type="submit" className="btn btn-outline-secondary loginBtn" >Save</button> 
+                    <button type="submit" className="btn btn-outline-secondary loginBtn" >Add Item</button> 
                 </form> 
                 </div> 
             </div> 

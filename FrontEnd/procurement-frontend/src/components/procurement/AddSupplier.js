@@ -30,7 +30,10 @@ class AddSupplier extends Component {
             console.log(response) 
             if(response.data != ''){ 
               alert(`Supplier added successfully...`); 
+              window.location.reload(); 
               this.props.history.push("/ProcumentDashBoard") 
+            //   window.location.reload(); 
+            this.setState({sName: '', email: '', password: '', address: '', phone: ''});
             } 
              
         }) 
@@ -38,11 +41,11 @@ class AddSupplier extends Component {
             console.log(error) 
         }) 
       } 
-     
- 
-    loginButtonHandler = () => { 
-        this.props.history.push("/") 
+    
+    supplierAddButtonHandler = () => { 
+        window.location.reload(); 
     } 
+   
      
   render() { 
     const { sName, email, password, address, phone} = this.state; 
@@ -51,7 +54,7 @@ class AddSupplier extends Component {
             <div className="panel panel-default"> 
                 <div className="panel-heading"> 
                     <h3 className="panel-title"> 
-                         Supplier Registration12
+                         Supplier Registration
                     </h3> 
                 </div> 
                 <div className="panel-body"> 
@@ -76,8 +79,7 @@ class AddSupplier extends Component {
                         <label>Phone No:</label> 
                         <input type='text' className="form-control" name="phone" value={phone} onChange={this.changeHandler} placeholder="contact number" /> 
                     </div> 
-                    <button type="submit" className="btn btn btn-outline-success registerBtn">Register</button> 
-                    <button type="button" className="btn btn-outline-secondary loginBtn" onClick={this.loginButtonHandler}>Login</button> 
+                    <button type="submit" className="btn btn btn-outline-success registerBtn" >Add Supplier</button> 
                 </form> 
                 </div> 
             </div> 

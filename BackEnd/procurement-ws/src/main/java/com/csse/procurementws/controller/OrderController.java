@@ -1,5 +1,6 @@
 package com.csse.procurementws.controller;
 
+import com.csse.procurementws.model.CommonResponse;
 import com.csse.procurementws.model.Order;
 import com.csse.procurementws.serviceImpl.OrderServiceImpl;
 import java.util.List;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,4 +38,15 @@ public class OrderController {
         }
     }
     
+    @RequestMapping(value = "/update/status/{status}/{id}", method = RequestMethod.POST)
+    public ResponseEntity<CommonResponse> updateStatus(@PathVariable(value = "status") String status, @PathVariable(value = "id") Integer id) {
+        try {
+            orderServiceImpl.setStatusOrder(id,status);
+            return new ResponseEntity<>(new CommonResponse("SUCSESS", "Item successfully Updated"), HttpStatus.OK);
+        } catch (Exception ex) {
+            Logger logger = LoggerFactory.getLogger(OrderController.class);
+            logger.error(ex.getMessage());
+            return new ResponseEntity<>(new CommonResponse("ERROR", "Failed to update item"), HttpStatus.OK);
+        }
+    }
 }
