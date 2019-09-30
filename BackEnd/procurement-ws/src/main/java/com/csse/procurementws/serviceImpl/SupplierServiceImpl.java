@@ -27,7 +27,7 @@ public class SupplierServiceImpl {
     
     public Supplier getSupplierById(Integer id) {
         Optional<Supplier> supplier = supplierRepository.findById(id);
-            return supplier.get();
+        return supplier.get();
     }
     
 }

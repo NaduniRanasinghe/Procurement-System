@@ -49,4 +49,16 @@ public class OrderController {
             return new ResponseEntity<>(new CommonResponse("ERROR", "Failed to update item"), HttpStatus.OK);
         }
     }
+    
+    @RequestMapping(value = "/getorder/{id}", method = RequestMethod.GET)
+    public ResponseEntity<Order> orderGetById(@PathVariable(value = "id") Integer id) {
+        try {
+            Order order = orderServiceImpl.getOrderById(id);
+            return new ResponseEntity<>(order, HttpStatus.OK);
+        } catch (Exception ex) {
+            Logger logger = LoggerFactory.getLogger(OrderController.class);
+            logger.error(ex.getMessage());
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }

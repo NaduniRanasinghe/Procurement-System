@@ -8,6 +8,7 @@ import com.csse.procurementws.repository.OrderItemRepository;
 import com.csse.procurementws.repository.OrderRepository;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -61,5 +62,10 @@ public class OrderServiceImpl {
     
     public void setStatusOrder(Integer id,String status){
         orderRepository.setStatusOrder(status , id);
+    }
+    
+    public Order getOrderById(Integer id){
+        Optional<Order> order = orderRepository.findById(id);
+        return order.get();
     }
 }
