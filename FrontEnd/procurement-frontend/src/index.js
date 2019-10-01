@@ -9,6 +9,9 @@ import Login from './components/Login';
 import ProcumentDashBoard from './components/procurement/ProcurementDashBoard'
 import AddSupplier from './components/procurement/AddSupplier'
 import AddItem from './components/procurement/AddItem'
+import AddOrder from './components/SiteManager/AddOrder'
+import AddDeliveryDetails from './components/SiteManager/AddDeliveryDetails'
+import SiteManagerDashBoard from './components/SiteManager/SiteManagerDashBoard'
 import SupplierHome from './Suppliers/JSX/SupplierHome'
 import Inventory from './Suppliers/JSX/Inventory'
 import InventoryView from './Suppliers/JSX/InventoryView'
@@ -29,6 +32,10 @@ ReactDOM.render(
             <Route path ='/InventoryView' component={InventoryView}/>
             <Route path ='/Profile' component={Profile}/>
             <Route path ='/SupplierViewMain' component ={SupplierViewMain}/>
+            <Route  path='/AddItem' component={AddItem}/>
+            <Route  path='/SiteManagerDashBoard' component={SiteManagerDashBoard} />
+            <Route  path='/AddOrder' component={AddOrder} />
+            <Route  path='/AddDeliveryDetails' component={AddDeliveryDetails} />
         </div>
   </Router>
 
