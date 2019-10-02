@@ -23,7 +23,7 @@ class  Content extends Component {
 
                     <div className="carousel-item active">
                         <div className="jumbotron pulse animated hero-technology carousel-hero">
-                            <h1 className="hero-title">Hero Technology</h1>
+                            <h1 className="hero-title">Empire Build</h1>
                             <p className="hero-subtitle">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras
                                 justo odio,
                                 dapibus ac facilisis in, egestas eget quam.</p>

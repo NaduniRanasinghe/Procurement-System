@@ -1,7 +1,9 @@
 import React, { Component } from 'react' 
 import { Link , withRouter} from 'react-router-dom'; 
 import axios from 'axios' 
-import constant from '../components/constant'; 
+import constant from '../components/constant';
+import Home from '../Template/Home';
+
  
  
 class Login extends Component { 
@@ -48,7 +50,9 @@ class Login extends Component {
  
   render() { 
     const { username, password } = this.state; 
-    return ( 
+    return (
+        <div>
+        <Home/>
         <div className="container"> 
         <div className="panel panel-default"> 
           <div className="panel-heading"> 
@@ -71,7 +75,8 @@ class Login extends Component {
             </form> 
           </div> 
         </div> 
-      </div> 
+      </div>
+        </div>
     ) 
   } 
 } 

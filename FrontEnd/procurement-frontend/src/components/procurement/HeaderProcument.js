@@ -19,7 +19,7 @@ class HeaderProcument extends Component {
                     <nav className="navbar navbar-light navBar_procument_dashboard " >
                         <a className="navbar-brand " href="#">
                             <h4 className="navBarTitle_procument_dashboard ">
-                                Procumnet DashBoard
+                                Procument Dashboard
                             </h4>
                         </a>
                     </nav>

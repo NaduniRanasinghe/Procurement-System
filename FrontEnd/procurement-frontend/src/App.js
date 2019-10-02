@@ -11,6 +11,8 @@ import './assets/css/Footer-Clean.css';
 
 
 import Home from "./Template/Home";
+import Carousel1 from "./Template/Carousel";
+import Cards from "./Template/Cards";
 //import Content from "./Template/Content";
 
 
@@ -20,6 +22,10 @@ class App extends Component {
         return (
             <div>
                 <Home/>
+
+             <Carousel1/>
+             <br/>
+            <Cards/>
                 {/*<EmpReg/>*/}
 {/*<Frame/>*/}
 {/*<Content/>*/}
