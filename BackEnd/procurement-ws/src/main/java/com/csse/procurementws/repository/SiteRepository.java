@@ -5,10 +5,13 @@
  */
 package com.csse.procurementws.repository;
 
+import com.csse.procurementws.model.Site;
+import org.springframework.data.jpa.repository.JpaRepository;
+
 /**
  *
  * @author NADUNI
  */
-public interface SiteRepository {
+public interface SiteRepository extends JpaRepository<Site, Integer>{
     
 }

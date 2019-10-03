@@ -13,6 +13,7 @@ import './assets/css/Footer-Clean.css';
 import Home from "./Template/Home";
 import Carousel1 from "./Template/Carousel";
 import Cards from "./Template/Cards";
+import AddEmployee from "./components/Employees/AddEmployee";
 //import Content from "./Template/Content";
 
 
@@ -21,6 +22,7 @@ class App extends Component {
     render() {
         return (
             <div>
+                {/*<AddEmployee/>*/}
                 <Home/>
 
              <Carousel1/>
