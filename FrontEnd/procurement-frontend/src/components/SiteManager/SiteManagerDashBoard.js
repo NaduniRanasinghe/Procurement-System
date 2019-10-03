@@ -79,8 +79,8 @@ class SiteManagerDashBoard extends Component {
         orderList:[],
         orderListNew:[],
         orderListSubmitForApprove:[],
-        orderListApproveFromManager:[],
-       // orderListSendToSupplier:[]
+       // orderListApproveFromManager:[],
+        orderListSendToSupplier:[]
       } 
     } 
      
@@ -231,26 +231,26 @@ class SiteManagerDashBoard extends Component {
           <br/>
           <div>
             <Tabs defaultActiveKey="New_Order" id="uncontrolled-tab-example">
-              <Tab eventKey="New_Order" title="NewOrder">
+              <Tab eventKey="New_Order" title="Created Orders">
                 <br/>
                 {viewNewOrder}
               </Tab>
-              <Tab eventKey="Submit_For_Approve" title="Submit For Approve">
+              <Tab eventKey="Submit_For_Approve" title="Submited Orders">
                 <br/>
                 {viewSubmitForApproveOrder}
               </Tab>
-              <Tab eventKey="Approved_From_Manager" title="Approved From Manager">
+              {/*<Tab eventKey="Approved_From_Manager" title="Approved From Manager">
                 <br/>
                 {viewAapproveFromManager}
-              </Tab>
-              {/*
-              <Tab eventKey="Send_To_supplier" title="Send To supplier">
+        </Tab>*/}
+            
+              <Tab eventKey="Send_To_supplier" title="Approved Orders">
                 <br/>
                 {viewSendToSupplier}
-              </Tab>*/}
+              </Tab>
               <Tab eventKey="Add_Order" title="Make A Order">
                 <br/>
-                {/* <AddOrder/> */}
+               {/* <AddOrder/> */}
               </Tab>
               <Tab eventKey="Add_Delivery_Details" title="Add Delivery Details">
                 <br/>
@@ -265,8 +265,8 @@ class SiteManagerDashBoard extends Component {
                     <ModUser {...routeProps} User={this.props}/>
                 )}/>
           */}
-         {/* <Route path="/SEND_TO_SUPPLIER" component={UpdateStatus} */}
-          <Route path="/SUBMIT_TO_APPROVE" component={UpdateStatus} />
+          <Route path="/SEND_TO_SUPPLIER" component={UpdateStatus} />
+         {/* <Route path="/SUBMIT_TO_APPROVE" component={UpdateStatus} />*/}
           <Route path="/INITIATE" component={UpdateStatus} />
           </div>
       {/* </div>  */}
