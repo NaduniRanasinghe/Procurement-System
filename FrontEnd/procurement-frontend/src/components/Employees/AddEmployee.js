@@ -30,41 +30,50 @@ class AddEmployee extends Component {
         this.setState(state)
     }
 
-    componentDidMount() {
-        axios.get(constant()+'/getsites').then(
-            data => {
-                this.setState({
-                    locations: data.data,
-                    location:data.data[0].id //get first object id from site list and set status to default site
-                })
-            }
-        ).catch(error => {
+    // componentDidMount() {
+    //     axios.get(constant()+'/getsites').then(
+    //         data => {
+    //             this.setState({
+    //                 locations: data.data,
+    //                 location:data.data[0].id //get first object id from site list and set status to default site
+    //             })
+    //         }
+    //     ).catch(error => {
+    //         console.log(error)
+    //     })
+    // }
+
+
+    submitHandler = (e) => {
+        e.preventDefault()
+        let obj = {
+            fname:this.state.fname,
+            lname:this.state.lname,
+            nic: this.state.nic,
+            empType: this.state.empType,
+            email: this.state.email,
+            location: this.state.location,
+            password: this.state.password
+        }
+
+        console.log(this.state)
+        axios.post(constant()+'/employee/save', obj)
+            .then(response => {
+                console.log(response)
+                if(response.data != ''){
+                    alert(`Item added successfully...`);
+                    window.location.reload();
+                    this.props.history.push("/ProcumentDashBoard")
+                }
+
+            }) .catch(error => {
             console.log(error)
         })
     }
 
-    submitHandler = (e) => {
-        e.preventDefault()
-        console.log(this.state)
-        axios.post(constant()+'/employee/save', this.state)
-            .then(response => {
-                console.log(response)
-                if(response.data != ''){
-                    alert(`Employee added successfully...`);
-                    window.location.reload();
-                    this.props.history.push("/ManagerDashBoard")
-                    this.setState({fname: '', lname: '', nic: '', empType:'', password: '', email:'', location: '', phone: ''});
-                }
-
-            })
-            .catch(error => {
-                console.log(error)
-            })
-    }
-
-    employeeAddButtonHandler = () => {
-        window.location.reload();
-    }
+    // employeeAddButtonHandler = () => {
+    //     window.location.reload();
+    // }
 
 
     render() {
@@ -107,18 +116,18 @@ class AddEmployee extends Component {
                                 <label>Email:</label>
                                 <input type='email' className="form-control" name="email" value={email} onChange={this.changeHandler} placeholder="Email" />
                             </div>
-                            <div className="form-group">
-                                <label>Work Location:</label>
-                                <select className="form-control" name="location" onChange={this.changeHandler} value={location}>
-                                    {
-                                        this.state.locations.map(sub => {
-                                            return (
-                                                <option key={sub.id} value={sub.id}>{sub.siteName}</option>
-                                            )
-                                        })
-                                    }
-                                </select>
-                            </div>
+                            {/*<div className="form-group">*/}
+                            {/*    <label>Work Location:</label>*/}
+                            {/*    <select className="form-control" name="location" onChange={this.changeHandler} value={location}>*/}
+                            {/*        {*/}
+                            {/*            this.state.locations.map(sub => {*/}
+                            {/*                return (*/}
+                            {/*                    <option key={sub.id} value={sub.id}>{sub.siteName}</option>*/}
+                            {/*                )*/}
+                            {/*            })*/}
+                            {/*        }*/}
+                            {/*    </select>*/}
+                            {/*</div>*/}
                             <div className="form-group">
                                 <label>Contact Number:</label>
                                 <input type='text' className="form-control" name="phone" value={phone} onChange={this.changeHandler} placeholder="contact number" />

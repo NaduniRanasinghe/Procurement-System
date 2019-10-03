@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.csse.procurementws.controller;
 
 import com.csse.procurementws.model.CommonResponse;
@@ -46,16 +42,16 @@ public class EmployeeController {
         }
     }
             
-    @RequestMapping(value = "/getemployees", method = RequestMethod.GET)
-    public ResponseEntity<List<Employee>> getEmployees() {
-        try {
-            List<Employee> employeeList = employeeService.getAllEmployees();
-            return new ResponseEntity<>(employeeList, HttpStatus.OK);
-        } catch (Exception ex) {
-            Logger logger = LoggerFactory.getLogger(EmployeeController.class);
-            logger.error(ex.getMessage());
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
+//    @RequestMapping(value = "/getemployees", method = RequestMethod.GET)
+//    public ResponseEntity<List<Employee>> getEmployees() {
+//        try {
+//            List<Employee> employeeList = employeeService.getAllEmployees();
+//            return new ResponseEntity<>(employeeList, HttpStatus.OK);
+//        } catch (Exception ex) {
+//            Logger logger = LoggerFactory.getLogger(EmployeeController.class);
+//            logger.error(ex.getMessage());
+//            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+//        }
+//    }
     
 }
