@@ -25,17 +25,17 @@ public class Site {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    private Integer siteId;
+    private Integer id ;
     private String siteName;
     private String location;
     private Date startDate;
 
-    public Integer getSiteId() {
-        return siteId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setSiteId(Integer siteId) {
-        this.siteId = siteId;
+    public void setId(Integer siteId) {
+        this.id = siteId;
     }
     
 

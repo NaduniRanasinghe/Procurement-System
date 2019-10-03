@@ -48,8 +48,8 @@ public class Employee {
    private String empType;
    
    
-   @Column (name = "username")
-   private String username;
+//   @Column (name = "username")
+//   private String username;
    
    @Column (name = "password")
    private String password;
@@ -109,13 +109,13 @@ public class Employee {
         this.empType = empType;
     }
 
-       public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
+//       public String getUsername() {
+//        return username;
+//    }
+//
+//    public void setUsername(String username) {
+//        this.username = username;
+//    }
 
     public String getPassword() {
         return password;

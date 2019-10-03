@@ -29,13 +29,13 @@ class Login extends Component {
             console.log(response) 
             if(response.data.responseCode === "LOGIN_SUCCESS"){ 
               this.props.history.push({ 
-                pathname : '/ProcumentDashBoard', 
+                pathname : '/ProcurementDashBoard',
                 state: { detail: response.data } 
               }); 
  
             }else{ 
                 this.props.history.push("/Login") 
-            } 
+            }
              
         }) 
         .catch(error => { 
