@@ -5,10 +5,16 @@
  */
 package com.csse.procurementws.controller;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RestController;
+
 /**
  *
  * @author NADUNI
  */
+
+@RestController
+@CrossOrigin
 public class SiteController {
     
 }
