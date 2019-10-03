@@ -14,7 +14,7 @@ class NavigationButton extends Component {
          
     } 
  
-    ButtonHandler = () => { 
+    deliveryDetailsButtonHandler = () => { 
         this.props.history.push("/AddDeliveryDetails") 
          
     } 
@@ -23,8 +23,9 @@ class NavigationButton extends Component {
         return (
             <Container>
             <Row>
-              <Col xs="2"><button className="button" onClick={this.orderButtonHandler}> Make A Order</button> </Col>
+              <Col xs="2"><button type="button" className="btn btn-outline-secondary registerBtn"  onClick={this.orderButtonHandler}> Order Details</button> </Col>
               <Col xs="2"><button type="button" className="btn btn-outline-secondary registerBtn" onClick={this.deliveryDetailsButtonHandler}>Delivery Details</button> </Col>
+              <Col xs="2"><button type="button" className="btn btn-outline-secondary registerBtn" onClick={this.deliveryDetailsButtonHandler}>Items /Suppliers Details</button> </Col>
               <Col xs="8"></Col>
             </Row>
           </Container>
