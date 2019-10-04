@@ -22,6 +22,8 @@ class AddEmployee extends Component {
             location:'',
             phone:''
         }
+        this.changeHandler = this.changeHandler.bind();
+        this.submitHandler = this.submitHandler.bind();
     }
 
     changeHandler = (e) => {
@@ -56,7 +58,7 @@ class AddEmployee extends Component {
             password: this.state.password
         }
 
-        console.log(this.state)
+            console.log(this.state)
         axios.post(constant()+'/employee/save', obj)
             .then(response => {
                 console.log(response)

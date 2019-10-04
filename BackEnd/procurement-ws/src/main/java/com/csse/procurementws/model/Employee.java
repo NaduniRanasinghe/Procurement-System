@@ -44,8 +44,8 @@ public class Employee {
    @Column (name = "WORKPLACE")
    private String workPlace;
    
-   @Column (name = "EMPTYPE")
-   private String empType;
+//   @Column (name = "EMPTYPE")
+//   private String empType;
    
    
 //   @Column (name = "username")
@@ -101,13 +101,13 @@ public class Employee {
         this.workPlace = workplace;
     }
     
-       public String getEmpType() {
-        return empType;
-    }
-
-    public void setEmpType(String empType) {
-        this.empType = empType;
-    }
+//       public String getEmpType() {
+//        return empType;
+//    }
+//
+//    public void setEmpType(String empType) {
+//        this.empType = empType;
+//    }
 
 //       public String getUsername() {
 //        return username;
