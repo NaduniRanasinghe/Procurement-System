@@ -31,34 +31,34 @@ public class Employee {
     @Column(name = "ID")
     private Integer empId;
     
-    @Column (name = "FirstName")
+    @Column (name = "FIRSTNAME")
     private String fname;
     
-    @Column (name = "LastName")
+    @Column (name = "LASTNAME")
     private String lname;
     
     @Column (name = "NIC")
     private String nic;
     
     
-   @Column (name = "WorkPlace")
+   @Column (name = "WORKPLACE")
    private String workPlace;
    
-   @Column (name = "EmpType")
+   @Column (name = "EMPTYPE")
    private String empType;
    
    
 //   @Column (name = "username")
 //   private String username;
    
-   @Column (name = "password")
+   @Column (name = "PASSWORD")
    private String password;
    
-   @Column (name = "email")
+   @Column (name = "EMAIL")
    private String email;
    
    
-   @Column (name = "phone")
+   @Column (name = "PHONE")
    private String phone;
     
      public Integer getEmpId() {
