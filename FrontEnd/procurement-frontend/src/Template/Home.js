@@ -53,7 +53,7 @@ class Home extends Component{
                                             name="search"/></div>
                                     </form>
                                     <span className="navbar-text"> <a className="btn btn-light action-button" role="button" onClick={this.signinButtonHandler}>Log In</a></span>
-                                    <a className="btn btn-light action-button" role="button" href="https://www.sliit.lk">Sign Up</a>
+                                    {/* <a className="btn btn-light action-button" role="button" href="https://www.sliit.lk">Sign Up</a> */}
                                 </div>
                             </div>
                         </nav>

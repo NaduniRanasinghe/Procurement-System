@@ -82,8 +82,7 @@ class Login extends Component {
                 <label>Password:</label> 
                 <input type="password" className="form-control" name="password" value={password} onChange={this.changeHandler} placeholder="Password" required /> 
               </div> 
-              <button type="submit" className="btn btn-outline-primary loginBtn">Login</button> 
-              <button type="button" className="btn btn-outline-secondary registerBtn" onClick={this.registerButtonHandler}>Register</button> 
+              <button type="submit" className="btn btn-outline-primary loginBtn">Login</button>
             </form> 
           </div> 
         </div> 
