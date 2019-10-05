@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.csse.procurementws.model;
 
 import java.util.Date;
@@ -12,55 +7,61 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 
 /**
  *
  * @author NADUNI
  */
 
-   @Entity
-   @Table (name = "site")
+@Entity
+@Table (name = "site")
 public class Site {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Integer id ;
+    
+    @Column(name = "SITE_NAME")
     private String siteName;
-    private String location;
+    
+    @Column(name = "LOCATION")
+    private String siteLocation;
+    
+    @Column(name = "START_DATE")
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date startDate;
 
     public Integer getId() {
         return id;
     }
 
-    public void setId(Integer siteId) {
-        this.id = siteId;
+    public void setId(Integer id) {
+        this.id = id;
     }
-    
 
-    public String getSiteName(){
+    public String getSiteName() {
         return siteName;
     }
-    
-    public void setSiteName(String siteName){
+
+    public void setSiteName(String siteName) {
         this.siteName = siteName;
     }
-    
-    public String getLocation(){
-        return location;
+
+    public String getSiteLocation() {
+        return siteLocation;
     }
-    
-    public void setLocation(String location){
-        this.location = location;
+
+    public void setSiteLocation(String siteLocation) {
+        this.siteLocation = siteLocation;
     }
-    
-    public Date getStartDate(){
+
+    public Date getStartDate() {
         return startDate;
     }
-    
-    public void setStartDate(Date startDate){
+
+    public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
-   
 }

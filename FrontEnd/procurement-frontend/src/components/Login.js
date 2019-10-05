@@ -1,5 +1,5 @@
 import React, { Component } from 'react' 
-import { Link , withRouter} from 'react-router-dom'; 
+// import { Link , withRouter} from 'react-router-dom'; 
 import axios from 'axios' 
 import constant from '../components/constant';
 import Home from '../Template/Home';
@@ -27,14 +27,26 @@ class Login extends Component {
         axios.post(constant()+'/login', this.state) 
         .then(response => { 
             console.log(response) 
-            if(response.data.responseCode === "LOGIN_SUCCESS"){ 
+            if(response.data.systemUser.empType === "MGR"){ 
               this.props.history.push({ 
-                pathname : '/procurementDashBoard',
+                pathname : '/ManagerDashBoard',
                 state: { detail: response.data } 
               }); 
  
-            }else{ 
-                this.props.history.push("/Login") 
+            }else if(response.data.systemUser.empType === "PO"){ 
+              this.props.history.push({ 
+                pathname : '/ProcurementDashBoard',
+                state: { detail: response.data } 
+              }); 
+            }else if(response.data.systemUser.empType === "SM"){
+              this.props.history.push({ 
+                pathname : '/SiteManagerDashBoard',
+                state: { detail: response.data } 
+              }); 
+            }else if(response.data.systemUser.empType === "SP"){
+              this.props.history.push("/SupplierHome") 
+            }else{
+              this.props.history.push("/Login") 
             }
              
         }) 

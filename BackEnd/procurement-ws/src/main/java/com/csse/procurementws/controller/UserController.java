@@ -33,7 +33,7 @@ public class UserController {
         
         try{
         
-            Object systemUser = systemUserServiceImpl.findByUsernameandPassword(loginRequest.getUsername(),loginRequest.getPassword());
+            Object systemUser = systemUserServiceImpl.findByUsernameandPasswordEmployee(loginRequest.getUsername(),loginRequest.getPassword());
         
             if(systemUser == null) {
                 LoginResponse loginResponse = new LoginResponse();

@@ -26,7 +26,7 @@ class App extends Component {
                 {/*<AddEmployee/>*/}
                 {/*<InventoryAdd/>*/}
                 <Home/>
-                <AddSite/>
+                {/* <AddSite/> */}
 
              <Carousel1/>
              <br/>

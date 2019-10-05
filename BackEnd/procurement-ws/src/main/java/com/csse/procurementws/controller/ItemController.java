@@ -3,6 +3,7 @@ package com.csse.procurementws.controller;
 import com.csse.procurementws.model.CommonResponse;
 import com.csse.procurementws.model.Item;
 import com.csse.procurementws.serviceImpl.ItemServiceImpl;
+import java.util.List;
 import javax.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,7 +34,19 @@ public class ItemController {
             itemServiceImpl.saveItem(item);
             return new ResponseEntity<>(new CommonResponse("SUCSESS", "Item successfully saved"), HttpStatus.OK);
         } catch (Exception ex) {
-            Logger logger = LoggerFactory.getLogger(SupplierController.class);
+            Logger logger = LoggerFactory.getLogger(ItemController.class);
+            logger.error(ex.getMessage());
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    
+    @RequestMapping(value = "/getitems", method = RequestMethod.GET)
+    public ResponseEntity<List<Item>> getItems() {
+        try {
+            List<Item> itemList = itemServiceImpl.getItems();
+            return new ResponseEntity<>(itemList, HttpStatus.OK);
+        } catch (Exception ex) {
+            Logger logger = LoggerFactory.getLogger(ItemController.class);
             logger.error(ex.getMessage());
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }

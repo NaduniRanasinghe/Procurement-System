@@ -1,15 +1,16 @@
 import React,{Component} from 'react';
 import axios from "axios";
 import constant from '../constant';
-import ProcurementDashBoard from './ProcurementDashBoard'
+import ProcumentDashBoard from './ProcurementDashBoard'
 
-export default class UpdateStatus extends Component{
+export default class ViewOrder extends Component{
 
     constructor(props) { 
         super(props) 
        
         this.state = { 
            url:this.props.location.pathname,
+           order:''
         } 
       } 
 
@@ -19,25 +20,22 @@ export default class UpdateStatus extends Component{
         let status = (url.split('/')[1]);
 
         console.log("ID =" + id +"  STATUS = "+ status);
-        axios.post(constant()+'/update/status/'+ status + '/' + id)
+        axios.get(constant()+'/getorder/' + id)
             .then(res => {
-                alert("Order Id : "+ id + " process successfull");
-                this.props.history.push("/ProcurementDashBoard") 
-                window.location.reload(); 
+                this.setState({ order: res.data}) 
+                console.log(this.state.order);
+                // alert("Order Id : "+ id + " process successfull");
+                // this.props.history.push("/ProcumentDashBoard") 
+                // window.location.reload(); 
             }).catch(err => {
                 console.log(err);
             });
       }
-    // static deleteUsers(id){
-    //     axios.delete('http://localhost:4000/users/'+id)
-    //         .then(response => {
-    //             alert("Data successfully deleted for :"+response.data.Name+" ID : "+response.data._id);
-    //         });
-    // }
 
     render(){
         return(
             <div>
+                <h1>View Order</h1>
             </div>
         );
     }

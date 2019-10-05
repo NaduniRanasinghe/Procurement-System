@@ -1,19 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.csse.procurementws.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-//import java.util.List;
-//import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -25,97 +16,82 @@ import javax.persistence.Table;
 @Table (name ="employee")
 public class Employee {
     
+   @Id
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
+   @Column(name = "ID")
+   private Integer empId;
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
-    private Integer empId;
+   @Column (name = "FIRST_NAME")
+   private String fname;
     
-    @Column (name = "FIRSTNAME")
-    private String fname;
+   @Column (name = "LAST_NAME")
+   private String lname;
     
-    @Column (name = "LASTNAME")
-    private String lname;
+   @Column (name = "NIC")
+   private String nic;
     
-    @Column (name = "NIC")
-    private String nic;
-    
-    
-   @Column (name = "WORKPLACE")
-   private String workPlace;
+   @Column (name = "LOCATION")
+   private String location;
    
-//   @Column (name = "EMPTYPE")
-//   private String empType;
-   
-   
-//   @Column (name = "username")
-//   private String username;
+   @Column (name = "EMP_TYPE")
+   private String empType;
    
    @Column (name = "PASSWORD")
    private String password;
    
    @Column (name = "EMAIL")
    private String email;
-   
-   
-   @Column (name = "PHONE")
-   private String phone;
     
-     public Integer getEmpId() {
+  @Column (name = "PHONE")
+   private String phone;
+
+    public Integer getEmpId() {
         return empId;
     }
 
-    public void seteMPiD(Integer id) {
-        this.empId = id;
+    public void setEmpId(Integer empId) {
+        this.empId = empId;
     }
 
-    public String getFirstName() {
+    public String getFname() {
         return fname;
     }
 
-    public void setFirstName(String fname) {
+    public void setFname(String fname) {
         this.fname = fname;
     }
-    
-       public String getLastName() {
+
+    public String getLname() {
         return lname;
     }
 
-    public void setLastName(String lname) {
+    public void setLname(String lname) {
         this.lname = lname;
     }
-    
-       public String getNic() {
+
+    public String getNic() {
         return nic;
     }
 
     public void setNic(String nic) {
         this.nic = nic;
     }
-    
-       public String getWorkPlace() {
-        return workPlace;
+
+    public String getLocation() {
+        return location;
     }
 
-    public void setWorkPlace(String workplace) {
-        this.workPlace = workplace;
+    public void setLocation(String location) {
+        this.location = location;
     }
-    
-//       public String getEmpType() {
-//        return empType;
-//    }
-//
-//    public void setEmpType(String empType) {
-//        this.empType = empType;
-//    }
 
-//       public String getUsername() {
-//        return username;
-//    }
-//
-//    public void setUsername(String username) {
-//        this.username = username;
-//    }
+    public String getEmpType() {
+        return empType;
+    }
+
+    public void setEmpType(String empType) {
+        this.empType = empType;
+    }
 
     public String getPassword() {
         return password;
@@ -133,7 +109,6 @@ public class Employee {
         this.email = email;
     }
 
-
     public String getPhone() {
         return phone;
     }
@@ -141,8 +116,4 @@ public class Employee {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-
-    
-    
-    
 }

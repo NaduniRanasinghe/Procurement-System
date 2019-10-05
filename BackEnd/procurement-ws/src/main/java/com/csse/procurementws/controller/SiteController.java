@@ -1,14 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.csse.procurementws.controller;
 
 import com.csse.procurementws.model.CommonResponse;
-import com.csse.procurementws.model.Employee;
 import com.csse.procurementws.model.Site;
-import com.csse.procurementws.serviceImpl.EmployeeServiceImpl;
 import com.csse.procurementws.serviceImpl.SiteServiceImpl;
 import java.util.List;
 import javax.validation.Valid;

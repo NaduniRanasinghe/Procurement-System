@@ -29,7 +29,7 @@ public class Item implements Serializable {
     private String iName;
     
     @Column(name = "CURRENT_PRICE")
-    private String currentPrice;
+    private Integer currentPrice;
     
     @Column(name = "CURRENT_STATUS")
     private String currentStatus;
@@ -61,11 +61,11 @@ public class Item implements Serializable {
         this.iName = iName;
     }
 
-    public String getCurrentPrice() {
+    public Integer getCurrentPrice() {
         return currentPrice;
     }
 
-    public void setCurrentPrice(String currentPrice) {
+    public void setCurrentPrice(Integer currentPrice) {
         this.currentPrice = currentPrice;
     }
 
