@@ -14,7 +14,6 @@ import Home from "./Template/Home";
 import Carousel1 from "./Template/Carousel";
 import Cards from "./Template/Cards";
 import AddEmployee from "./components/Employees/AddEmployee";
-import InventoryAdd from "./Suppliers/JSX/InventoryAdd";
 import AddSite from "./components/Site/AddSite";
 
 
