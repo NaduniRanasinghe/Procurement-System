@@ -28,15 +28,15 @@ public class ItemController {
     ItemServiceImpl itemServiceImpl;
     
     @RequestMapping(value = "/save/item", method = RequestMethod.POST)
-    public ResponseEntity<CommonResponse> saveItem(@Valid @RequestBody Item item) {
+    public String saveItem(@Valid @RequestBody Item item) {
         try {
             item.setCurrentStatus("AVAILABLE");
             itemServiceImpl.saveItem(item);
-            return new ResponseEntity<>(new CommonResponse("SUCSESS", "Item successfully saved"), HttpStatus.OK);
+            return "SUCSESS";
         } catch (Exception ex) {
             Logger logger = LoggerFactory.getLogger(ItemController.class);
             logger.error(ex.getMessage());
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+            return "INTERNAL_SERVER_ERROR";
         }
     }
     
