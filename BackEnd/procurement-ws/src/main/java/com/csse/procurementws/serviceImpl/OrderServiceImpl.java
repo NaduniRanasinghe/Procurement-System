@@ -68,4 +68,17 @@ public class OrderServiceImpl {
         Optional<Order> order = orderRepository.findById(id);
         return order.get();
     }
+    
+    public void saveOrder(Order order){
+        Order UpdatedOrder = orderRepository.save(order);
+        int totalPrice = 0;
+        for(Item item : order.getItemList()){
+            totalPrice = totalPrice + item.getCurrentPrice();
+            OrderItem orderItem = new OrderItem();
+            orderItem.setItemId(item.getId());
+            orderItem.setOrderId(UpdatedOrder.getId());
+            orderItemRepository.save(orderItem);
+        }
+        orderRepository.updateTotalPrice(UpdatedOrder.getId(),totalPrice);
+    }
 }

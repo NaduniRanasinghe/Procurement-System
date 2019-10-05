@@ -11,6 +11,8 @@ import Button from 'react-bootstrap/Button'
 import UpdateStatus from './UpdateStatus';
 import AddSupplier from './AddSupplier';
 import AddItem from './AddItem';
+import ViewOrder from './ViewOrder';
+import LogOut from'./LogOut';
 
 const NewOrderNav = props =>(
   
@@ -22,7 +24,7 @@ const NewOrderNav = props =>(
         {/* <Button variant="outline-success" onClick={this.submitFunction}>Send to Supplier</Button> */}
         <Link className="btn btn-outline-success" to={"/SEND_TO_SUPPLIER/"+props.orderObj.id}>Send to Supplier</Link>
         <Link className="btn btn-outline-primary" to={"/SUBMIT_TO_APPROVE/"+props.orderObj.id}>Submit For approve</Link>
-        <Link className="btn btn-outline-danger" to={"/INITIATE/"+props.orderObj.id}>Reject</Link>
+        <Link className="btn btn-outline-danger" to={"/REJECTED/"+props.orderObj.id}>Reject</Link>
         <Link className="btn btn-outline-secondary" to={"/VIEW/"+props.orderObj.id}>View</Link>
         {/* <Link className="btn btn-primary" to={"/trainsModify/"+props.instructor._id}>Modify</Link> */}
       </td>
@@ -50,6 +52,21 @@ const ApproveFromManagerNav = props =>(
     <td>{props.orderObj.orderName}</td>
     <td>{props.orderObj.totalPrice}</td>
     <td>
+      <Link className="btn btn-outline-success" to={"/SEND_TO_SUPPLIER/"+props.orderObj.id}>Send to Supplier</Link>
+      <Link className="btn btn-outline-secondary" to={"/VIEW/"+props.orderObj.id}>View</Link>
+    </td>
+  </tr>
+
+);
+
+const RejectedFromManagerNav = props =>(
+
+  <tr>
+    <td>{props.index+1}</td>
+    <td>{props.orderObj.orderName}</td>
+    <td>{props.orderObj.totalPrice}</td>
+    <td>
+      <Link className="btn btn-outline-danger" to={"/REJECTED/"+props.orderObj.id}>Reject</Link>
       <Link className="btn btn-outline-secondary" to={"/VIEW/"+props.orderObj.id}>View</Link>
     </td>
   </tr>
@@ -70,7 +87,7 @@ const SendToSupplierNav = props =>(
 );
 
 
-class ProcumentDashBoard extends Component { 
+class ProcurementDashBoard extends Component { 
  
     constructor(props) { 
       super(props);
@@ -117,7 +134,7 @@ class ProcumentDashBoard extends Component {
          
     } 
 
-    signinButtonHandler = () => {
+    logOutButtonHandler = () => {
       this.props.history.push("/Login")
   }
 
@@ -140,6 +157,12 @@ class ProcumentDashBoard extends Component {
         })
     }
 
+    rejectedFromManagerListFunction = () => {
+      return this.filterOrderByState(this.state.orderList,"REJECTED_FROM_MANAGER").map(function(orders,index){
+          return <RejectedFromManagerNav orderObj={orders} index={index}/>;
+        })
+    }
+
     sendToSupplierListFunction = () => {
       return this.filterOrderByState(this.state.orderList,"SEND_TO_SUPPLIER").map(function(orders,index){
           return <SendToSupplierNav orderObj={orders} index={index} />;
@@ -152,13 +175,14 @@ class ProcumentDashBoard extends Component {
       let viewSubmitForApproveOrder;
       let viewAapproveFromManager;
       let viewSendToSupplier;
+      let viewRejectedFromManager;
 
         viewNewOrder = 
         <table class="table table-striped">
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Order className</th>
+              <th scope="col">Order Name</th>
               <th scope="col">Total Price</th>
               <th scope="col">Actions</th>
             </tr>
@@ -188,7 +212,7 @@ class ProcumentDashBoard extends Component {
           <thead>
             <tr>
               <th>#</th>
-              <th>Order className</th>
+              <th>Order Name</th>
               <th>Total Price</th>
               <th>Actions</th>
             </tr>
@@ -198,12 +222,27 @@ class ProcumentDashBoard extends Component {
           </tbody>
         </table> 
 
+    viewRejectedFromManager = 
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Order Name</th>
+            <th>Total Price</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {this.rejectedFromManagerListFunction()}
+        </tbody>
+      </table> 
+
       viewSendToSupplier = 
         <table class="table table-striped">
           <thead>
             <tr>
               <th>#</th>
-              <th>Order className</th>
+              <th>Order Name</th>
               <th>Total Price</th>
               <th>Actions</th>
             </tr>
@@ -217,6 +256,10 @@ class ProcumentDashBoard extends Component {
       
       <Router>
       <HeaderProcument/>
+      {/* <LogOut/> */}
+      <div>
+            <button type="button" className="btn btn-outline-secondary registerBtn" onClick={this.logOutButtonHandler}>Log Out</button> 
+      </div>
       {/* <NavigationButton/> */}
       <div className="raw">
       <div className="col-md-12">
@@ -241,6 +284,10 @@ class ProcumentDashBoard extends Component {
                 <br/>
                 {viewAapproveFromManager}
               </Tab>
+              <Tab eventKey="REJECTED_From_Manager" title="Rejected From Manager">
+                <br/>
+                {viewRejectedFromManager}
+              </Tab>
               <Tab eventKey="Send_To_supplier" title="Send To supplier">
                 <br/>
                 {viewSendToSupplier}
@@ -264,7 +311,8 @@ class ProcumentDashBoard extends Component {
           */}
           <Route path="/SEND_TO_SUPPLIER" component={UpdateStatus} />
           <Route path="/SUBMIT_TO_APPROVE" component={UpdateStatus} />
-          <Route path="/INITIATE" component={UpdateStatus} />
+          <Route path="/REJECTED" component={UpdateStatus} />
+          <Route path="/VIEW" component={ViewOrder} />
           </div>
       {/* </div>  */}
           {/* // <div class="modal-body">
@@ -277,4 +325,4 @@ class ProcumentDashBoard extends Component {
   } 
 } 
  
-export default ProcumentDashBoard 
+export default ProcurementDashBoard 

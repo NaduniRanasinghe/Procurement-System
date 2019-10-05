@@ -65,7 +65,7 @@ class AddEmployee extends Component {
                 if(response.data != ''){
                     alert(`Item added successfully...`);
                     window.location.reload();
-                    this.props.history.push("/ProcumentDashBoard")
+                    this.props.history.push("/ManagerDashBoard")
                 }
 
             }) .catch(error => {
@@ -79,7 +79,7 @@ class AddEmployee extends Component {
 
 
     render() {
-        const { fname,lname,nic, email, empType, password, location, phone} = this.state;
+        const { fname,lname,nic, email, empType, password, phone} = this.state;
         return (
             <div className="container">
                 <div className="panel panel-default">
@@ -104,7 +104,7 @@ class AddEmployee extends Component {
                             </div>
                             <div className="form-group">
                                 <label>Employee Type</label>
-                                <select className="form-control" name="location" onChange={this.changeHandler} value={empType}>
+                                <select className="form-control" name="empType" onChange={this.changeHandler} value={empType}>
                                     {
                                         this.state.empTypes.map(sub => {
                                             return (
@@ -118,18 +118,6 @@ class AddEmployee extends Component {
                                 <label>Email:</label>
                                 <input type='email' className="form-control" name="email" value={email} onChange={this.changeHandler} placeholder="Email" />
                             </div>
-                            {/*<div className="form-group">*/}
-                            {/*    <label>Work Location:</label>*/}
-                            {/*    <select className="form-control" name="location" onChange={this.changeHandler} value={location}>*/}
-                            {/*        {*/}
-                            {/*            this.state.locations.map(sub => {*/}
-                            {/*                return (*/}
-                            {/*                    <option key={sub.id} value={sub.id}>{sub.siteName}</option>*/}
-                            {/*                )*/}
-                            {/*            })*/}
-                            {/*        }*/}
-                            {/*    </select>*/}
-                            {/*</div>*/}
                             <div className="form-group">
                                 <label>Contact Number:</label>
                                 <input type='text' className="form-control" name="phone" value={phone} onChange={this.changeHandler} placeholder="contact number" />

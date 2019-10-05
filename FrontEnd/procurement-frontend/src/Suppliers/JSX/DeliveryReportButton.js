@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import axios from "axios";
-import "../CSS/Inventory.css";
+import "../CSS/Delivery.css";
 
 
 export default class InventoryAdd extends Component{
@@ -108,55 +108,8 @@ export default class InventoryAdd extends Component{
 
     render() {
         return(
-            <div style={{background:'',marginTop:'80px'}}>
-                <div className="container" style={{width:700,background:'',color:'black'}}>
-                    <h3 align="center">ADD NEW ITEM</h3>                 
-                    <form onSubmit={this.onSubmit}>
-                        <div className="form-group">
-                            <label>Name : </label>
-                            <input
-                                type="text"
-                                className="form-control"
-                                ref ="item_name"
-                                placeholder="Item Name"
-                                value={this.state.item_name || ''}
-                                onChange={this.onChangeName}
-                            />
-                        </div>
-                        <div style ={{fontSize:12,color:"red"}}>
-                            {this.state.item_name_error}
-                        </div>
-                        <div className="form-group">
-                            <label>Quantity : </label>
-                            <input
-                                type="text"
-                                className="form-control"
-                                placeholder="Quantity Available"
-                                value={this.state.quanitity || ''}
-                                onChange={this.onChangeQuanity}
-                            />
-                        </div>
-                        <div style ={{fontSize:12,color:"red"}}>
-                            {this.state.item_quanitity_error}
-                        </div>
-                        <div className="form-group">
-                            <label>Price Per Item: </label>
-                            <input
-                                type="text"
-                                className="form-control"
-                                placeholder="Price Per Item"
-                                value={this.state.price || ''}
-                                onChange={this.onChangePrice}
-                            />
-                        </div>
-                        <div style ={{fontSize:12,color:"red"}}>
-                            {this.state.price_error}
-                        </div>
-                        <div className="form-group" style={{marginLeft:'250px',width:'200px'}}>
-                            <input type="submit" value="ADD ITEM" className="btn btn-primary" style={{width:'200px',height:'40px',float:"left"}}/>
-                        </div>
-                    </form>
-                </div>
+            <div className="form-group" style={{width:'200px'}}>
+                    <input type="submit" value="ADD ITEM" className="btn btn-primary" style={{width:'200px',height:'40px',float:"left"}}/>
             </div>
         );
     }

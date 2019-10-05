@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import axios from "axios";
 import "./site.css";
-
+import constant from '../constant'; 
 
 export default class AddSite extends Component{
 
@@ -10,11 +10,13 @@ export default class AddSite extends Component{
         this.onChangeSiteName = this.onChangeSiteName.bind(this);
         this.onChangeLocation = this.onChangeLocation.bind(this);
         this.onChangeStartDate = this.onChangeStartDate.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
 
 
-        this.state= {
+        this.state = {
             siteName :'',
-            location:'',
+            siteLocation:'',
+            locations:['Malabe-Hospital','Maharagama-new building','Kaduwela-site1'],
             startDate:'',
 
         }
@@ -26,7 +28,7 @@ export default class AddSite extends Component{
     }
     onChangeLocation(e){
         this.setState({
-            location:e.target.value
+            siteLocation:e.target.value
         });
     }
     onChangeStartDate(e){
@@ -62,32 +64,22 @@ export default class AddSite extends Component{
     }
 
     onSubmit(e){
-        console.log(this.refs.siteName.value);
         e.preventDefault();
+        const { siteName,siteLocation,startDate} = this.state; 
+        let obj = { 
+            siteName:siteName, 
+            siteLocation:siteLocation,  
+            startDate:startDate,
+         } 
 
-        // const isValid = this.validate();
-
-
-        // if(isValid){
-
-        const newSite={
-            siteName: this.state.siteName,
-            location: this.state.location,
-            startDate:this.state.startDate
-        };
-
-        axios.post('http://localhost:8084/procurement-ws/site/save', newSite)
+        axios.post(constant() +'/site/save', obj)
             .then(res => {
                     console.log(res);
-                    alert(`Site added Succesfully`);
+                    alert(`Item added successfully...`); 
+                    window.location.reload(); 
+                    this.props.history.push("/ManagerDashBoard") 
                 }
             );
-        this.state= {
-            siteName: '',
-            location:'',
-            startDate:''
-        }
-        //}
     }
 
 
@@ -97,6 +89,7 @@ export default class AddSite extends Component{
     }
 
     render() {
+        const { siteLocation } = this.state; 
         return(
             <div style={{background:'',marginTop:'80px'}}>
                 <div className="container" style={{width:700,background:'',color:'black'}}>
@@ -108,7 +101,7 @@ export default class AddSite extends Component{
                                 type="text"
                                 className="form-control"
                                 ref ="item_name"
-                                placeholder="Item Name"
+                                placeholder="Site Name"
                                 value={this.state.siteName || ''}
                                 onChange={this.onChangeSiteName}
                             />
@@ -116,16 +109,18 @@ export default class AddSite extends Component{
                         <div style ={{fontSize:12,color:"red"}}>
                             {this.state.site_name_error}
                         </div>
-                        <div className="form-group">
-                            <label>Location : </label>
-                            <input
-                                type="text"
-                                className="form-control"
-                                placeholder="Location"
-                                value={this.state.location || ''}
-                                onChange={this.onChangeLocation}
-                            />
-                        </div>
+                        <div className="form-group"> 
+                        <label>Location :</label> 
+                            <select className="form-control" name="siteLocation" onChange={this.onChangeLocation} value={siteLocation}>
+                                {
+                                    this.state.locations.map(sub => {
+                                        return (
+                                            <option key={sub.id} value={sub}>{sub}</option>
+                                        )
+                                    })
+                                }
+                            </select>
+                        </div> 
                         <div style ={{fontSize:12,color:"red"}}>
                             {this.state.site_location_error}
                         </div>

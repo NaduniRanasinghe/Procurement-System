@@ -1,14 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.csse.procurementws.controller;
 
 import com.csse.procurementws.model.CommonResponse;
-import com.csse.procurementws.model.Employee;
 import com.csse.procurementws.model.Site;
-import com.csse.procurementws.serviceImpl.EmployeeServiceImpl;
 import com.csse.procurementws.serviceImpl.SiteServiceImpl;
 import java.util.List;
 import javax.validation.Valid;
@@ -38,14 +31,14 @@ public class SiteController {
     
     
         @RequestMapping(value = "/site/save", method = RequestMethod.POST)
-    public ResponseEntity<CommonResponse> saveSite(@Valid @RequestBody Site site) {
+    public String saveSite(@Valid @RequestBody Site site) {
         try {
             siteService.saveSite(site);
-            return new ResponseEntity<>(new CommonResponse("SUCSESS", "Site added successfully"), HttpStatus.OK);
+            return "SUCSESS";
         } catch (Exception ex) {
             Logger logger = LoggerFactory.getLogger(SiteController.class);
             logger.error(ex.getMessage());
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+            return "INTERNAL_SERVER_ERROR";
         }
     }
             

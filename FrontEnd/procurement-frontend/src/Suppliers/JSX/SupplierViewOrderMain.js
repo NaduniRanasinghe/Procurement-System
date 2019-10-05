@@ -19,7 +19,6 @@ export default class SupplierViewOrderMain extends Component {
                 <div id ="content">
 
                 </div>
-                <Footer/>
             </div>
         );
     }

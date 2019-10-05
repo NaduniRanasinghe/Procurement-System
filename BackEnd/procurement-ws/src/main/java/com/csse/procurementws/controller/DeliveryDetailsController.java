@@ -1,15 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.csse.procurementws.controller;
 
 import com.csse.procurementws.model.CommonResponse;
+
 import com.csse.procurementws.model.DeliveryDetails;
 import com.csse.procurementws.repository.DeliveryDetailsRepository;
 import com.csse.procurementws.serviceImpl.DeliveryDetailsServiceImpl;
-import com.csse.procurementws.serviceImpl.InventoryServiceImpl;
 import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,16 +33,13 @@ public class DeliveryDetailsController {
     
         
     @RequestMapping(value = "/save/DeliveryDetails", method = RequestMethod.POST)
-    public ResponseEntity<CommonResponse> saveItemDeliveryItem(@Valid @RequestBody  DeliveryDetails deliveryitems) {
-        try {  
-            System.out.println("jjjjj" );    
+    public String saveItemDeliveryItem(@Valid @RequestBody  DeliveryDetails deliveryitems) {
+        try {     
             deliveryserviceImpl.saveItem(deliveryitems);   
-            return new ResponseEntity<>(new CommonResponse("SUCSESS", "Item successfully Added"), HttpStatus.OK); 
-            
+            return "SUCSESS";       
         } catch (Exception ex) {
-            
-            System.out.println("jjjjj" + ex);
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);   
+            System.out.println(ex);
+            return "INTERNAL_SERVER_ERROR";   
         }
     } 
     

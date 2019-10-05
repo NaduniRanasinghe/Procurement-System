@@ -24,4 +24,5 @@ public class DeliveryDetailsServiceImpl {
     public void saveItem(DeliveryDetails item) {
         deliverydetailsrepository.save(item);
     }
+    
 }

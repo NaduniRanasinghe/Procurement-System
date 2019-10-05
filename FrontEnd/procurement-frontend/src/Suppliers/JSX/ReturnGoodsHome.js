@@ -2,18 +2,21 @@ import React, {Component} from 'react';
 // import Register from "./Register";
 import SupplierHeader from "./SupplierHeader";
 import Footer from "./Footer";
-import "../CSS/Inventory.css";
-import InventoryViewContent from "./InventoryViewContent";
+import "../CSS/SupplierHeader.css";
+import ReturnGoodsView from "./ReturnGoodsView";
 
 // localStorage.setItem("user", null);
-export default class InventoryView extends Component {
-    
+export default class AddReturnGoodsHome extends Component {
+
     render() {
         return (
             <div>
                 <SupplierHeader/>
-                <InventoryViewContent/>
-                <Footer/>
+                {/* <div id ="content">
+                </div> */}
+                <ReturnGoodsView/>
+                <div id ="content">
+                </div>
             </div>
         );
     }

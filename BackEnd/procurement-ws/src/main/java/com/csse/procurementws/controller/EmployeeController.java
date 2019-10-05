@@ -4,7 +4,6 @@ package com.csse.procurementws.controller;
 import com.csse.procurementws.model.CommonResponse;
 import com.csse.procurementws.model.Employee;
 import com.csse.procurementws.serviceImpl.EmployeeServiceImpl;
-import java.util.List;
 import javax.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,27 +30,15 @@ public class EmployeeController {
     
     
         @RequestMapping(value = "/employee/save", method = RequestMethod.POST)
-    public ResponseEntity<CommonResponse> saveEmployee(@Valid @RequestBody Employee employee) {
+    public String saveEmployee(@Valid @RequestBody Employee employee) {
         try {
             employeeService.saveEmployee(employee);
-            return new ResponseEntity<>(new CommonResponse("SUCSESS", "Employee added successfully"), HttpStatus.OK);
+            return "SUCSESS";       
         } catch (Exception ex) {
             Logger logger = LoggerFactory.getLogger(EmployeeController.class);
             logger.error(ex.getMessage());
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+            return "INTERNAL_SERVER_ERROR";   
         }
     }
             
-//    @RequestMapping(value = "/getemployees", method = RequestMethod.GET)
-//    public ResponseEntity<List<Employee>> getEmployees() {
-//        try {
-//            List<Employee> employeeList = employeeService.getAllEmployees();
-//            return new ResponseEntity<>(employeeList, HttpStatus.OK);
-//        } catch (Exception ex) {
-//            Logger logger = LoggerFactory.getLogger(EmployeeController.class);
-//            logger.error(ex.getMessage());
-//            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-//        }
-//    }
-    
 }

@@ -56,6 +56,19 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
+        
+        <dependency>
+	          <groupId>eclipse</groupId>
+	          <artifactId>jdtcore</artifactId>
+	          <version>3.1.0</version>
+	          <scope>compile</scope>
+	   </dependency>
+	   <dependency>
+    	     <groupId>com.itextpdf</groupId>
+    	     <artifactId>itextpdf</artifactId>
+    	     <version>5.0.6</version>
+    	</dependency>
+    	
     </dependencies>
 
     <build>
