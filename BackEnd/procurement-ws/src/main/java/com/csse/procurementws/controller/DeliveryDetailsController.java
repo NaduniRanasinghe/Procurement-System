@@ -6,10 +6,10 @@
 package com.csse.procurementws.controller;
 
 import com.csse.procurementws.model.CommonResponse;
+
 import com.csse.procurementws.model.DeliveryDetails;
 import com.csse.procurementws.repository.DeliveryDetailsRepository;
 import com.csse.procurementws.serviceImpl.DeliveryDetailsServiceImpl;
-import com.csse.procurementws.serviceImpl.InventoryServiceImpl;
 import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -100,8 +100,8 @@ export default class AddCreditNote extends Component{
                             {this.state.price_error}
                         </div>
                         <div className="form-gro" style={{marginTop:'1000px',marginLeft:'120px',width:'100px',display:'inline'}}>
-                            <button className="btn btn-primary" style={{width:'200px',height:'40px',marginRight:'10px'}}><a className="nav-link active" href="/CreditNoteView"style={{color:'white'}}>VIEW DELIVERY</a></button>
-                            <input type="submit" value="ADD ITEM" className="btn btn-primary" style={{width:'200px',height:'40px'}}/>
+                            <button className="btn btn-primary" style={{width:'200px',height:'40px',marginRight:'10px'}}><a className="nav-link active" href="/CreditNoteView"style={{color:'white'}}> VIEW CREDIT NOTE</a></button>
+                            <input type="submit" value="ADD CREDIT NOTE" className="btn btn-primary" style={{width:'200px',height:'40px'}}/>
                         </div>
                     </form>
                 </div>

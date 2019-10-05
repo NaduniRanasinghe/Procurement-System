@@ -14,11 +14,11 @@ export default class DeliveryAdd extends Component{
         this.onChangeDate = this.onChangeDate.bind(this);
 
         this.state= {
-            deliveryId:'',
-            itemName:'',
-            quanitity:'',
-            date:'',
-            price:'',
+            did:'',
+            CDate:'',
+            supplier:'',
+            orderName:'',
+            notes:'',
             item_name_error:'',
             item_quanitity_error:'',
             price_error:''
@@ -26,28 +26,28 @@ export default class DeliveryAdd extends Component{
     };
     onChangeName(e){
         this.setState({
-            itemName : e.target.value
+            CDate : e.target.value
         });
     }
     onChangeQuanity(e){
         this.setState({
-            quanitity:e.target.value
+            supplier:e.target.value
         });
     }
     onChangePrice(e){
         this.setState({
-            price:e.target.value
+            orderName:e.target.value
         });
     }
     onChangeDate(e){
         this.setState({
-            date:e.target.value
+            notes:e.target.value
         });
     }
 
 
     onSubmit(e){
-        console.log(this.refs.item_name.value);
+        console.log(this.refs.orderName.value);
         e.preventDefault();
 
         // const isValid = this.validate();
@@ -56,10 +56,10 @@ export default class DeliveryAdd extends Component{
         // if(isValid){
 
             const newDeliveryItem={
-                itemName: this.state.itemName,
-                quanitity: this.state.quanitity,
-                date:this.state.date,
-                price:this.state.price
+                CDate: this.state.CDate,
+                supplier: this.state.supplier,
+                orderName:this.state.orderName,
+                notes:this.state.notes
             };
 
             axios.post('http://localhost:8090/save/deliveryitem', newDeliveryItem)
@@ -70,10 +70,10 @@ export default class DeliveryAdd extends Component{
                 );
 
             this.state= {
-                itemName:'',
-                quanitity:'',
-                date:'',
-                price:''
+                CDate:'',
+                supplier:'',
+                orderName:'',
+                notes:''
             }
         //}
     }
@@ -91,13 +91,13 @@ export default class DeliveryAdd extends Component{
                     <h3 align="center">ADD NEW DELIVERY ITEM</h3>                 
                     <form onSubmit={this.onSubmit}>
                         <div className="form-group">
-                            <label>Name : </label>
+                            <label>Delivery Date : </label>
                             <input
                                 type="text"
                                 className="form-control"
                                 ref ="item_name"
-                                placeholder="Item Name"
-                                value={this.state.itemName || ''}
+                                placeholder="Delivery Date"
+                                value={this.state.CDate || ''}
                                 onChange={this.onChangeName}
                             required/>
                         </div>
@@ -105,12 +105,12 @@ export default class DeliveryAdd extends Component{
                             {this.state.item_name_error}
                         </div>
                         <div className="form-group">
-                            <label>Quantity : </label>
+                            <label>Supplier : </label>
                             <input
                                 type="text"
                                 className="form-control"
-                                placeholder="Quantity Available"
-                                value={this.state.quanitity || ''}
+                                placeholder="Supplier"
+                                value={this.state.supplier || ''}
                                 onChange={this.onChangeQuanity}
                                 required
                             />
@@ -119,23 +119,23 @@ export default class DeliveryAdd extends Component{
                             {this.state.item_quanitity_error}
                         </div>
                         <div className="form-group">
-                            <label>Date : </label>
+                            <label>Order Name: </label>
                             <input
                                 type="text"
                                 className="form-control"
-                                placeholder="Price Per Item"
-                                value={this.state.date || ''}
+                                placeholder="Order Name"
+                                value={this.state.orderName || ''}
                                 onChange={this.onChangeDate}
                                 required
                             />
                         </div>
                         <div className="form-group">
-                            <label>Price Per Item: </label>
+                            <label>Notes : </label>
                             <input
                                 type="text"
                                 className="form-control"
-                                placeholder="Price Per Item"
-                                value={this.state.price || ''}
+                                placeholder="Notes"
+                                value={this.state.notes || ''}
                                 onChange={this.onChangePrice}
                                 required
                             />
