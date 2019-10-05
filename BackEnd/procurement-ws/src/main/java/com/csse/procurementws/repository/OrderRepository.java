@@ -17,4 +17,10 @@ public interface OrderRepository extends JpaRepository<Order, Integer>{
     @Query("update Order ord set ord.status = :status where ord.id = :id")
     int setStatusOrder(String status, Integer id);
 //    update OrderPaper pop set pop.englishStatus = :status where pop.id = :id"
+    
+    @Transactional
+    @Modifying
+    @Query("update Order ord set ord.totalPrice = :totalPrice where ord.id = :id")
+    int updateTotalPrice(Integer id, Integer totalPrice);
+    
 }

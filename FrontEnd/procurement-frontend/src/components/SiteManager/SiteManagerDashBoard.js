@@ -9,28 +9,24 @@ import Tab from 'react-bootstrap/Tab'
 import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button'
 import UpdateStatus from './UpdateStatus';
-// import AddOrder from './AddOrder'
 import AddDeliveryDetails from './AddDeliveryDetails';
+import AddOrder from './AddOrder';
 
-const NewOrderNav = props =>(
+const CreatedOrderNav = props =>(
   
     <tr>
       <td>{props.index+1}</td>
       <td>{props.orderObj.orderName}</td>
       <td>{props.orderObj.totalPrice}</td>
       <td>
-        {/* <Button variant="outline-success" onClick={this.submitFunction}>Send to Supplier</Button> */}
-        {/*<Link className="btn btn-outline-success" to={"/SEND_TO_SUPPLIER/"+props.orderObj.id}>Send to Supplier</Link>*/}
-        <Link className="btn btn-outline-primary" to={"/SUBMIT_TO_APPROVE/"+props.orderObj.id}>Submit For approve</Link>
-        {/*<Link className="btn btn-outline-danger" to={"/INITIATE/"+props.orderObj.id}>Reject</Link>*/}
+        <Link className="btn btn-outline-primary" to={"/SUBMIT/"+props.orderObj.id}>Submit For approve</Link>
         <Link className="btn btn-outline-secondary" to={"/VIEW/"+props.orderObj.id}>View</Link>
-        {/* <Link className="btn btn-primary" to={"/trainsModify/"+props.instructor._id}>Modify</Link> */}
       </td>
     </tr>
 
 );
 
-const SubmitForApproveNav = props =>(
+const SubmitedOrderNav = props =>(
 
   <tr>
     <td>{props.index+1}</td>
@@ -42,19 +38,6 @@ const SubmitForApproveNav = props =>(
   </tr>
 
 );
-
-{/*const ApproveFromManagerNav = props =>(
-
-  <tr>
-    <td>{props.index+1}</td>
-    <td>{props.orderObj.orderName}</td>
-    <td>{props.orderObj.totalPrice}</td>
-    <td>
-      <Link className="btn btn-outline-secondary" to={"/VIEW/"+props.orderObj.id}>View</Link>
-    </td>
-  </tr>
-
-);*/}
 
 const SendToSupplierNav = props =>(
 
@@ -64,6 +47,20 @@ const SendToSupplierNav = props =>(
     <td>{props.orderObj.totalPrice}</td>
     <td>
       <Link className="btn btn-outline-secondary" to={"/VIEW/"+props.orderObj.id}>View</Link>
+    </td>
+  </tr>
+
+);
+
+const RejectedOrderNav = props =>(
+
+  <tr>
+    <td>{props.index+1}</td>
+    <td>{props.orderObj.orderName}</td>
+    <td>{props.orderObj.totalPrice}</td>
+    <td>
+      <Link className="btn btn-outline-secondary" to={"/VIEW/"+props.orderObj.id}>View</Link>
+      <Link className="btn btn-outline-secondary" to={"/EDIT_ORDER/"+props.orderObj.id}>Edit</Link>
     </td>
   </tr>
 
@@ -121,40 +118,44 @@ class SiteManagerDashBoard extends Component {
       this.props.history.push("/Login")
   }
 
-    newOrderListFunction = () => {
-      return this.filterOrderByState(this.state.orderList,"SUBMIT").map(function(orders,index){
-          return <NewOrderNav orderObj={orders} index={index} />;
-          // return this.newOrderListFunctionNav(orders);
+  createdOrderListFunction = () => {
+      return this.filterOrderByState(this.state.orderList,"INITIATE").map(function(orders,index){
+          return <CreatedOrderNav orderObj={orders} index={index} />;
       })
     }
 
-    submitForApproveListFunction = () => {
-      return this.filterOrderByState(this.state.orderList,"SUBMIT_TO_APPROVE").map(function(orders,index){
-          return <SubmitForApproveNav orderObj={orders} index={index} />;
+    submitedOrderListFunction = () => {
+      return this.filterOrderByState(this.state.orderList,"SUBMIT").map(function(orders,index){
+          return <SubmitedOrderNav orderObj={orders} index={index} />;
         })
     }
 
-   /* approveFromManagerListFunction = () => {
-      return this.filterOrderByState(this.state.orderList,"APPROVED_FROM_MANAGER").map(function(orders,index){
-          return <ApproveFromManagerNav orderObj={orders} index={index}/>;
-        })
-    }
-    */
-
-   sendToSupplierListFunction = () => {
+    sendToSupplierListFunction = () => {
       return this.filterOrderByState(this.state.orderList,"SEND_TO_SUPPLIER").map(function(orders,index){
-          return <SendToSupplierNav orderObj={orders} index={index} />;
+          return <SendToSupplierNav orderObj={orders} index={index}/>;
         })
     }
+    
+
+    rejectedOrderListFunction = () => {
+      return this.filterOrderByState(this.state.orderList,"REJECT_TO_SITE_MANAGER").map(function(orders,index){
+          return <RejectedOrderNav orderObj={orders} index={index} />;
+        })
+    }
+
+    logOutButtonHandler = () => {
+      this.props.history.push("/Login")
+  }
 
   render() { 
 
-      let viewNewOrder;
-      let viewSubmitForApproveOrder;
-     let viewAapproveFromManager;
+      let viewCreatedOrder;
+      let viewSubmitedOrder;
       let viewSendToSupplier;
+     let viewRejectedOrder;
 
-        viewNewOrder = 
+
+      viewCreatedOrder = 
         <table class="table table-striped">
           <thead>
             <tr>
@@ -165,11 +166,11 @@ class SiteManagerDashBoard extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.newOrderListFunction()}
+            {this.createdOrderListFunction()}
           </tbody>
         </table>
 
-        viewSubmitForApproveOrder = 
+      viewSubmitedOrder = 
         <table class="table table-striped">
           <thead>
             <tr>
@@ -180,25 +181,9 @@ class SiteManagerDashBoard extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.submitForApproveListFunction()}
+            {this.submitedOrderListFunction()}
           </tbody>
         </table> 
-
-      /*viewAapproveFromManager = 
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Order className</th>
-              <th>Total Price</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.approveFromManagerListFunction()}
-          </tbody>
-        </table> 
-        */
 
       viewSendToSupplier = 
         <table class="table table-striped">
@@ -214,43 +199,55 @@ class SiteManagerDashBoard extends Component {
             {this.sendToSupplierListFunction()}
           </tbody>
         </table> 
+        
+
+      viewRejectedOrder = 
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Order className</th>
+              <th>Total Price</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.rejectedOrderListFunction()}
+          </tbody>
+        </table> 
     
     return ( 
       
       <Router>
       <HeaderSiteManager/>
       <NavigationButton/>
+      <div>
+            <button type="button" className="btn btn-outline-secondary registerBtn" onClick={this.logOutButtonHandler}>Log Out</button> 
+      </div>
       <div className="raw">
-      <div className="col-md-12">
-          {/* <div className="panel-body"> 
-          <form onSubmit={this.submitHandler}> 
-                <button  type="button" className="button" onClick={this.supplierButtonHandler}>Supplier</button> 
-                <button type="button" className="btn btn-outline-secondary registerBtn" onClick={this.itemButtonHandler}>Item</button> 
-            </form> 
-          </div>  */}
+        <div className="col-md-12">
           <br/>
           <div>
-            <Tabs defaultActiveKey="New_Order" id="uncontrolled-tab-example">
-              <Tab eventKey="New_Order" title="Created Orders">
+            <Tabs defaultActiveKey="Created_Orders" id="uncontrolled-tab-example">
+              <Tab eventKey="Created_Orders" title="Created Orders">
                 <br/>
-                {viewNewOrder}
+                {viewCreatedOrder}
               </Tab>
-              <Tab eventKey="Submit_For_Approve" title="Submited Orders">
+              <Tab eventKey="Submited_Order" title="Submited Orders">
                 <br/>
-                {viewSubmitForApproveOrder}
+                {viewSubmitedOrder}
               </Tab>
-              {/*<Tab eventKey="Approved_From_Manager" title="Approved From Manager">
-                <br/>
-                {viewAapproveFromManager}
-        </Tab>*/}
-            
-              <Tab eventKey="Send_To_supplier" title="Approved Orders">
+              <Tab eventKey="Send_To_supplier" title="Approved Orders an Send to Supplier">
                 <br/>
                 {viewSendToSupplier}
               </Tab>
+              <Tab eventKey="Rejected_Order" title="Rejected Order">
+                <br/>
+                {viewRejectedOrder}
+              </Tab>
               <Tab eventKey="Add_Order" title="Make A Order">
                 <br/>
-               {/* <AddOrder/> */}
+               <AddOrder/>
               </Tab>
               <Tab eventKey="Add_Delivery_Details" title="Add Delivery Details">
                 <br/>
@@ -260,22 +257,11 @@ class SiteManagerDashBoard extends Component {
           </div>
           <br/>
           <div>
-          
-          {/* <Route path="/modify/" render={(routeProps) => (
-                    <ModUser {...routeProps} User={this.props}/>
-                )}/>
-          */}
-          <Route path="/SEND_TO_SUPPLIER" component={UpdateStatus} />
-         {/* <Route path="/SUBMIT_TO_APPROVE" component={UpdateStatus} />*/}
-          <Route path="/INITIATE" component={UpdateStatus} />
+            <Route path="/SUBMIT" component={UpdateStatus} />
           </div>
-      {/* </div>  */}
-          {/* // <div class="modal-body">
-
-          // </div> */}
-          </div>
-          </div>
-          </Router>
+        </div>
+      </div>
+    </Router>
     ) 
   } 
 } 

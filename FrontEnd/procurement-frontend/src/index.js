@@ -6,30 +6,33 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import App from './App';
 import Login from './components/Login';
-import ProcumentDashBoard from './components/procurement/ProcurementDashBoard'
+import ProcurementDashBoard from './components/procurement/ProcurementDashBoard'
 import AddSupplier from './components/procurement/AddSupplier'
 import AddItem from './components/procurement/AddItem'
 import AddOrder from './components/SiteManager/AddOrder'
 import AddDeliveryDetails from './components/SiteManager/AddDeliveryDetails'
 import SiteManagerDashBoard from './components/SiteManager/SiteManagerDashBoard'
-import SupplierHome from './Suppliers/JSX/SupplierHome'
 import Delivery from './Suppliers/JSX/Delivery'
 import DeliveryView from './Suppliers/JSX/DeliveryView'
 import Profile from './Suppliers/JSX/Profile'
 import SupplierViewMain from './Suppliers/JSX/SupplierViewOrderMain'
+import ManagerDashBoard from './components/Employees/ManagerDashboard'
+
 import ReturnGoodsHome from './Suppliers/JSX/AddReturnGood';
 import AddReturnGoodsHome from './Suppliers/JSX/AddReturnGoodsHome';
 import AddCreditNoteHome from './Suppliers/JSX/AddCreditNoteHome';
 import ReturnGoodsView from './Suppliers/JSX/ReturnGoodsHome';
 import CreditNoteViewHome from './Suppliers/JSX/CreditNoteViewHome';
 import SupplierOrder1Home from './Suppliers/JSX/SupplierOrder1Home';
+import SupplierHome from './Suppliers/JSX/SupplierHome';
+import LogOut from './components/procurement/LogOut';
 ReactDOM.render(
 
     <Router>
         <div>
             <Route exact path='/' component={App} />
             <Route  path='/Login' component={Login} />
-            <Route  path='/ProcumentDashBoard' component={ProcumentDashBoard} />
+            <Route  path='/ProcurementDashBoard' component={ProcurementDashBoard} />
             <Route  path='/AddSupplier' component={AddSupplier} />
             <Route  path='/AddItem' component={AddItem} />
             <Route  path='/AddSupplier' component={AddSupplier} />
@@ -42,11 +45,14 @@ ReactDOM.render(
             <Route  path='/SiteManagerDashBoard' component={SiteManagerDashBoard} />
             <Route  path='/AddOrder' component={AddOrder} />
             <Route  path='/AddDeliveryDetails' component={AddDeliveryDetails} />
+            <Route  path='/ManagerDashBoard' component={ManagerDashBoard} />
             <Route path ='/AddReturnGoodsHome' component ={AddReturnGoodsHome}/>
             <Route path='/AddCreditNote' component={AddCreditNoteHome}/>
             <Route path='/ReturnGoodsView' component={ReturnGoodsView}/>
             <Route path='/CreditNoteView' component={CreditNoteViewHome}/>
             <Route path ="/SupplierOrderHome" component={SupplierOrder1Home}/>
+            <Route path ="/SupplierHome" component={SupplierHome}/>
+            <Route path ="/LogOut" component={LogOut}/>
         </div>
   </Router>
 

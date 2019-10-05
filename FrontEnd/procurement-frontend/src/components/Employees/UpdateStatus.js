@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import axios from "axios";
 import constant from '../constant';
-import ProcurementDashBoard from './ProcurementDashBoard'
+import ManagerDashBoard from './ManagerDashboard';
 
 export default class UpdateStatus extends Component{
 
@@ -22,7 +22,7 @@ export default class UpdateStatus extends Component{
         axios.post(constant()+'/update/status/'+ status + '/' + id)
             .then(res => {
                 alert("Order Id : "+ id + " process successfull");
-                this.props.history.push("/ProcurementDashBoard") 
+                this.props.history.push("/ManagerDashBoard") 
                 window.location.reload(); 
             }).catch(err => {
                 console.log(err);
