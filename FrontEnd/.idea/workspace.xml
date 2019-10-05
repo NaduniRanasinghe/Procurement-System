@@ -2,13 +2,93 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32daba83-9def-4c52-aed7-138a510cdf07" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/controller/CreditNoteController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/controller/ReturnedGoodsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/model/CreditNote.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/model/Invoice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/model/OrderDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/model/ReturnedGoods.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/repository/CreditNoteRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/repository/ReturnedGoodsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/serviceImpl/CreditNoteServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/serviceImpl/InvoiceReport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/serviceImpl/ReturnItemReport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/serviceImpl/ReturnItemServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/serviceImpl/ReturnedGoodsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/testing/DeliveryTesting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/test/java/com/csse/procurementws/controller/DeliveryDetailsControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/test/java/com/csse/procurementws/controller/EmployeeControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/test/java/com/csse/procurementws/controller/ItemControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/test/java/com/csse/procurementws/controller/OrderControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/test/java/com/csse/procurementws/controller/SiteControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/test/java/com/csse/procurementws/controller/SupplierControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/test/java/com/csse/procurementws/controller/UserControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/CSS/Delivery.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/CSS/Profile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/AddCreditNote.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/AddCreditNoteHome.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/AddReturnGoodsHome.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/CreditNoteView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/CreditNoteViewHome.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/DeliveryAdd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/ReturnGoodsHome.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/ReturnGoodsView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/SupplierOrder1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/SupplierOrder1Home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/constant.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/procurement-frontend/src/components/Employees/UpdateStatus.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/procurement-frontend/src/components/procurement/LogOut.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/procurement-frontend/src/components/procurement/ViewOrder.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pasan.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/procurement-ws/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/controller/DeliveryDetailsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/controller/DeliveryDetailsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/controller/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/controller/InventoryController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/controller/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/controller/ItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/controller/SiteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/controller/SiteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/controller/SupplierController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/controller/SupplierController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/model/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/model/Inventory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/model/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/model/Site.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/model/Site.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/repository/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/repository/EmployeeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/repository/InventoryRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/repository/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/serviceImpl/DeliveryDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/serviceImpl/DeliveryDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/serviceImpl/InventoryServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/serviceImpl/ItemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/serviceImpl/ItemServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/serviceImpl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/serviceImpl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/serviceImpl/SystemUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/java/com/csse/procurementws/serviceImpl/SystemUserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/procurement-ws/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/procurement-frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/procurement-frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procurement-frontend/src/Employees/Employee_registration.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/Inventory.js" beforeDir="false" afterPath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/Delivery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/InventoryAdd.js" beforeDir="false" afterPath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/AddReturnGood.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/InventoryReportButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/DeliveryReportButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/InventoryView.js" beforeDir="false" afterPath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/DeliveryView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/InventoryViewContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/DeliveryViewContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/ProfileContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/ProfileContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/SupplierContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/SupplierContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/SupplierHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/SupplierHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/SupplierHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/SupplierHome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/SupplierViewOrder.js" beforeDir="false" afterPath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/SupplierViewOrder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/SupplierViewOrderMain.js" beforeDir="false" afterPath="$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/SupplierViewOrderMain.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procurement-frontend/src/Template/Cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/procurement-frontend/src/Template/Cards.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procurement-frontend/src/Template/Carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/procurement-frontend/src/Template/Carousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procurement-frontend/src/Template/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/procurement-frontend/src/Template/Home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/procurement-frontend/src/components/Employees/AddEmployee.js" beforeDir="false" afterPath="$PROJECT_DIR$/procurement-frontend/src/components/Employees/AddEmployee.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procurement-frontend/src/components/Employees/ManagerDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/procurement-frontend/src/components/Employees/ManagerDashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/procurement-frontend/src/components/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/procurement-frontend/src/components/Login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/procurement-frontend/src/components/Site/AddSite.js" beforeDir="false" afterPath="$PROJECT_DIR$/procurement-frontend/src/components/Site/AddSite.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procurement-frontend/src/components/SiteManager/AddOrder.js" beforeDir="false" afterPath="$PROJECT_DIR$/procurement-frontend/src/components/SiteManager/AddOrder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procurement-frontend/src/components/SiteManager/SiteManagerDashBoard.js" beforeDir="false" afterPath="$PROJECT_DIR$/procurement-frontend/src/components/SiteManager/SiteManagerDashBoard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procurement-frontend/src/components/procurement/ProcurementDashBoard.js" beforeDir="false" afterPath="$PROJECT_DIR$/procurement-frontend/src/components/procurement/ProcurementDashBoard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procurement-frontend/src/components/procurement/UpdateStatus.js" beforeDir="false" afterPath="$PROJECT_DIR$/procurement-frontend/src/components/procurement/UpdateStatus.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procurement-frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/procurement-frontend/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../procurementdb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../procurementdb.sql" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,21 +104,41 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/procurement-frontend/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#40#0" expanded="true" />
-                <element signature="e#337#372#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="204">
+              <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/procurement-frontend/src/Template/Carousel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="258">
+              <caret line="63" column="6" lean-forward="true" selection-start-line="63" selection-start-column="6" selection-end-line="63" selection-end-column="6" />
+              <folding>
+                <element signature="e#0#48#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/procurement-frontend/src/Template/Cards.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="27" column="10" lean-forward="true" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/procurement-frontend/src/components/Site/AddSite.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+            <state relative-caret-position="139">
+              <caret line="133" column="19" selection-start-line="133" selection-start-column="19" selection-end-line="133" selection-end-column="19" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -49,8 +149,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/procurement-frontend/src/components/Site/site.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="82" selection-start-line="82" selection-end-line="82" />
+            <state relative-caret-position="71">
+              <caret line="62" column="10" selection-start-line="62" selection-start-column="10" selection-end-line="62" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -65,17 +165,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/Inventory.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/procurement-frontend/src/Suppliers/JSX/InventoryAdd.js">
+        <entry file="file://$PROJECT_DIR$/procurement-frontend/src/Template/Home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="162" selection-end-column="1" />
+            <state relative-caret-position="85">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
               <folding>
-                <element signature="e#0#38#0" expanded="true" />
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -117,9 +212,6 @@
         <option value="$PROJECT_DIR$/procurement-frontend/src/Template/ImageSlider.js" />
         <option value="$PROJECT_DIR$/procurement-frontend/src/Template/Content.js" />
         <option value="$PROJECT_DIR$/procurement-frontend/src/Template/Header.js" />
-        <option value="$PROJECT_DIR$/procurement-frontend/src/Template/Home.js" />
-        <option value="$PROJECT_DIR$/procurement-frontend/src/Template/Cards.js" />
-        <option value="$PROJECT_DIR$/procurement-frontend/src/Template/Carousel.js" />
         <option value="$PROJECT_DIR$/procurement-frontend/src/components/Employees/HeaderManager.js" />
         <option value="$PROJECT_DIR$/procurement-frontend/src/components/Employees/ManagerNavigation.js" />
         <option value="$PROJECT_DIR$/procurement-frontend/src/components/Employees/ManagerDashboard.js" />
@@ -128,6 +220,9 @@
         <option value="$PROJECT_DIR$/procurement-frontend/src/App.js" />
         <option value="$PROJECT_DIR$/procurement-frontend/src/components/Site/site.css" />
         <option value="$PROJECT_DIR$/procurement-frontend/src/components/Site/AddSite.js" />
+        <option value="$PROJECT_DIR$/procurement-frontend/src/Template/Cards.js" />
+        <option value="$PROJECT_DIR$/procurement-frontend/src/Template/Home.js" />
+        <option value="$PROJECT_DIR$/procurement-frontend/src/Template/Carousel.js" />
       </list>
     </option>
   </component>
@@ -142,6 +237,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -172,23 +268,7 @@
               <item name="FrontEnd" type="462c0819:PsiDirectoryNode" />
               <item name="procurement-frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Site" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FrontEnd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FrontEnd" type="462c0819:PsiDirectoryNode" />
-              <item name="procurement-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Suppliers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FrontEnd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FrontEnd" type="462c0819:PsiDirectoryNode" />
-              <item name="procurement-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Suppliers" type="462c0819:PsiDirectoryNode" />
-              <item name="CSS" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FrontEnd" type="b2602c69:ProjectViewProjectNode" />
@@ -198,11 +278,17 @@
               <item name="Suppliers" type="462c0819:PsiDirectoryNode" />
               <item name="JSX" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="FrontEnd" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FrontEnd" type="462c0819:PsiDirectoryNode" />
+              <item name="procurement-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Template" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -260,11 +346,12 @@
       <workItem from="1570124323393" duration="2211000" />
       <workItem from="1570173000395" duration="859000" />
       <workItem from="1570174765966" duration="4009000" />
+      <workItem from="1570303521302" duration="791000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34699000" />
+    <option name="totallyTimeSpent" value="35490000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -277,9 +364,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18043622" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18043622" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -291,7 +377,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3297587" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32841823" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.33914208" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.33914208" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -319,6 +405,18 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/procurement-frontend/src/Template/Carousel.js</url>
+          <line>61</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/procurement-frontend/src/assets1/js/jquery.min.js" />
@@ -378,13 +476,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/procurement-frontend/src/Employees/Employee_registration.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="78" column="18" selection-start-line="78" selection-start-column="18" selection-end-line="78" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/procurement-frontend/src/Employees/Employee_registration.js" />
     <entry file="file://$PROJECT_DIR$/procurement-frontend/src/components/Employees/AddSite.js" />
     <entry file="file://$PROJECT_DIR$/procurement-frontend/src/Template/ImageSlider.js" />
     <entry file="file://$PROJECT_DIR$/procurement-frontend/src/Template/Header.js" />
@@ -392,26 +484,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="25" column="67" selection-start-line="25" selection-start-column="67" selection-end-line="25" selection-end-column="67" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/procurement-frontend/src/Template/Home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/procurement-frontend/src/Template/Cards.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -434,16 +506,6 @@
           <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/procurement-frontend/src/Template/Carousel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1156">
-          <caret line="68" column="25" lean-forward="true" selection-start-line="68" selection-start-column="25" selection-end-line="68" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -610,13 +672,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/procurement-frontend/src/App.js">
+    <entry file="file://$PROJECT_DIR$/procurement-frontend/src/components/Site/AddSite.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+        <state relative-caret-position="139">
+          <caret line="133" column="19" selection-start-line="133" selection-start-column="19" selection-end-line="133" selection-end-column="19" />
           <folding>
-            <element signature="e#0#40#0" expanded="true" />
-            <element signature="e#337#372#0" expanded="true" />
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/procurement-frontend/src/Template/Cards.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="10" lean-forward="true" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/procurement-frontend/src/Template/Home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -630,17 +711,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/procurement-frontend/src/components/Site/site.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="82" selection-start-line="82" selection-end-line="82" />
+        <state relative-caret-position="71">
+          <caret line="62" column="10" selection-start-line="62" selection-start-column="10" selection-end-line="62" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/procurement-frontend/src/components/Site/AddSite.js">
+    <entry file="file://$PROJECT_DIR$/procurement-frontend/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+        <state relative-caret-position="204">
+          <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/procurement-frontend/src/Template/Carousel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="63" column="6" lean-forward="true" selection-start-line="63" selection-start-column="6" selection-end-line="63" selection-end-column="6" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#48#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -13,6 +13,6 @@ public class ProcurementOfficer extends Employee {
     
     
     public String getLocation(){
-        return workPlace;
+        return location;
     }
 }

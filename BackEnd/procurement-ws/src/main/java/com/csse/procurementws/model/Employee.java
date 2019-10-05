@@ -31,7 +31,7 @@ public class Employee {
    private String nic;
     
    @Column (name = "LOCATION")
-   private String location;
+   String location;
    
    @Column (name = "EMP_TYPE")
    private String empType;

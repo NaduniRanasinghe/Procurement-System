@@ -12,6 +12,6 @@ package com.csse.procurementws.model;
 public class SiteManager extends Employee {
     
     public  String getLocation(){
-        return workPlace;
+        return location;
     }
 }
