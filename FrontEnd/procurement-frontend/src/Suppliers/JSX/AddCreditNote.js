@@ -72,11 +72,11 @@ export default class AddCreditNote extends Component{
                     <h3 align="center">ADD CREDIT NOTE</h3>                 
                     <form onSubmit={this.onSubmit}>
                         <div className="form-group">
-                            <label>Credit Note: </label>
+                            <label>Return Good ID: </label>
                             <input
                                 type="text"
                                 className="form-control"
-                                placeholder="Credit Note"
+                                placeholder="Return Good ID"
                                 value={this.state.returnGoodID || ''}
                                 onChange={this.onChangeQuanity}
                                 required
@@ -86,11 +86,11 @@ export default class AddCreditNote extends Component{
                             {this.state.item_quanitity_error}
                         </div>
                         <div className="form-group">
-                            <label>Price Per Item: </label>
+                            <label>Credit Note </label>
                             <input
                                 type="text"
                                 className="form-control"
-                                placeholder="Price Per Item"
+                                placeholder="Credit Note"
                                 value={this.state.creditnote || ''}
                                 onChange={this.onChangePrice}
                                 required

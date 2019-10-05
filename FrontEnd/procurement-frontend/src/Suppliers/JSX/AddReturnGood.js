@@ -99,7 +99,6 @@ export default class AddReturnGoods extends Component{
                 price:'',
                 supplier:''
             }
-        //}
     }
 
 
@@ -120,7 +119,7 @@ export default class AddReturnGoods extends Component{
                                 type="text"
                                 className="form-control"
                                 ref ="item_name"
-                                placeholder="Item Name"
+                                placeholder="Return Date"
                                 value={this.state.retDate || ''}
                                 onChange={this.onChangeName}
                             />

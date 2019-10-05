@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 class ReturnGoodsView extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props);
+        this.onSubmit = this.onSubmit.bind(this)
         this.state = {
             retItemId:'',
             retDate:'',
@@ -21,6 +22,17 @@ class ReturnGoodsView extends Component {
             }
         )
     }
+    onSubmit(e){
+        e.preventDefault();
+
+            axios.post('http://localhost:8090/ReturnItemController/printReturnGoodsReport')
+                .then(res => {
+                        console.log(res);
+                        alert(`Return Goods report Succesfully Created !!`);
+                    }
+                );
+    }
+
     render() {
         return (
             <div className="container" style={{marginTop:'50px'}}>
@@ -53,10 +65,12 @@ class ReturnGoodsView extends Component {
                         }
                     </tbody>
                 </table>
+
+                <form onSubmit={this.onSubmit}>
                 <div className="" style={{}}>
                             <input type="submit" value="GENERATE REPORT" className="btn btn-primary" style={{width:'200px',height:'40px',float:"center",marginBottom:'100px',marginTop:'50px',marginLeft:'400px'}}/>
                 </div>
-
+                </form>
             </div>
 
         )

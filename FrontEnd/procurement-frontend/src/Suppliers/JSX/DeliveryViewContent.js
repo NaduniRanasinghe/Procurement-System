@@ -42,7 +42,7 @@ class DeliveryViewContent extends Component {
                                         <td>{delivery.deliveryId}</td>
                                         <td>{delivery.ItemName}</td>
                                         <td>{delivery.quanitity}</td>
-                                        <td>{delivery.date}</td>price
+                                        <td>{delivery.date}</td>
                                         <td>{delivery.price}</td>
                                         {/* <td>{cou.lectureInCharge}</td> */}
                                         {/* <td><button onClick={this.viewSubjects.bind(this,cou.subject)}>View Subject Info</button></td>

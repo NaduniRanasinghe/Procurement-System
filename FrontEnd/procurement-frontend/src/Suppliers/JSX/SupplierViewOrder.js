@@ -3,8 +3,9 @@ import axios from 'axios';
 import constant from './constant';
 
 class SupplierViewOrder extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props);
+        this.onSubmit = this.onSubmit.bind(this);
         this.state = {
             id:'',
             item_name:'',
@@ -22,6 +23,16 @@ class SupplierViewOrder extends Component {
                 });
             }
         )
+    }
+    onSubmit(e){
+        e.preventDefault();
+
+            axios.post('http://localhost:8090/printOrderReport')
+                .then(res => {
+                        console.log(res);
+                        alert(`Invoice Generated Succesfully!!`);
+                    }
+                );
     }
 
     render() {
@@ -58,10 +69,12 @@ class SupplierViewOrder extends Component {
                         }
                     </tbody>
                 </table>
+                
+                <form onSubmit={this.onSubmit}>
                 <div className="" style={{}}>
-                            <input type="submit" value="GENERATE INVOICE" className="btn btn-primary" style={{width:'200px',height:'40px',float:"center",marginBottom:'100px',marginTop:'50px',marginLeft:'400px'}}/>
+                            <input type="submit" value="GENERATE REPORT" className="btn btn-primary" style={{width:'200px',height:'40px',float:"center",marginBottom:'100px',marginTop:'50px',marginLeft:'400px'}}/>
                 </div>
-
+                </form>
             </div>
 
         )
