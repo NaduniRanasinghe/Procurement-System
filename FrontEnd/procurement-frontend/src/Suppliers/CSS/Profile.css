@@ -1,0 +1,41 @@
+.App-title {
+    margin-top: -600px;
+    padding-top: 20px;
+}
+.App-header{
+    padding-top: -100px;
+
+}
+.info{
+
+   float:center;
+   color: white;
+   margin-top: 20px;
+   margin-left:-560px;
+
+
+}
+.info2{
+    float:center;
+    color: white;
+    margin-top: 20px;
+    margin-left:-580px;
+}
+.info3{
+    float:center;
+    color: white;
+    margin-top: 20px;
+    margin-left:-630px;
+}
+.info4{
+    float:center;
+    color: white;
+    margin-top: 20px;
+    margin-left:-590px;
+}
+.App-content{
+    margin-left:500px;
+
+
+
+}

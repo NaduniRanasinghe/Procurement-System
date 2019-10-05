@@ -19,7 +19,7 @@ export default class SupplierHome extends Component {
                 <div id ="content">
 
                 </div>
-                <Footer/>
+
             </div>
         );
     }

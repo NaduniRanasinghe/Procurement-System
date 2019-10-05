@@ -2,22 +2,18 @@ import React, {Component} from 'react';
 // import Register from "./Register";
 import SupplierHeader from "./SupplierHeader";
 import Footer from "./Footer";
-import "../CSS/SupplierHeader.css";
-import SupplierViewOrder from './SupplierViewOrder';
+import "../CSS/Delivery.css";
+import DeliveryAdd from "./DeliveryAdd";
 
 // localStorage.setItem("user", null);
-export default class SupplierViewOrderMain extends Component {
+export default class Delivery extends Component {
 
     render() {
         return (
             <div>
                 <SupplierHeader/>
-                {/* <div id ="content">
-
-                </div> */}
-                <SupplierViewOrder/>
+                <DeliveryAdd/>
                 <div id ="content">
-
                 </div>
             </div>
         );

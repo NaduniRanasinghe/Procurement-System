@@ -3,21 +3,20 @@ import React, {Component} from 'react';
 import SupplierHeader from "./SupplierHeader";
 import Footer from "./Footer";
 import "../CSS/SupplierHeader.css";
-import SupplierViewOrder from './SupplierViewOrder';
+import ReturnGoodsView from "./ReturnGoodsView";
+import AddCreditNote from './AddCreditNote';
 
 // localStorage.setItem("user", null);
-export default class SupplierViewOrderMain extends Component {
+export default class AddCreditNoteHome extends Component {
 
     render() {
         return (
             <div>
                 <SupplierHeader/>
                 {/* <div id ="content">
-
                 </div> */}
-                <SupplierViewOrder/>
+                <AddCreditNote/>
                 <div id ="content">
-
                 </div>
             </div>
         );

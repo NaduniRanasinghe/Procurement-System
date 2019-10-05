@@ -3,10 +3,10 @@ import React, {Component} from 'react';
 import SupplierHeader from "./SupplierHeader";
 import Footer from "./Footer";
 import "../CSS/SupplierHeader.css";
-import SupplierViewOrder from './SupplierViewOrder';
+import SupplierOrder1 from './SupplierOrder1';
 
 // localStorage.setItem("user", null);
-export default class SupplierViewOrderMain extends Component {
+export default class SupplierOrder1Home extends Component {
 
     render() {
         return (
@@ -15,9 +15,8 @@ export default class SupplierViewOrderMain extends Component {
                 {/* <div id ="content">
 
                 </div> */}
-                <SupplierViewOrder/>
+                <SupplierOrder1/>
                 <div id ="content">
-
                 </div>
             </div>
         );

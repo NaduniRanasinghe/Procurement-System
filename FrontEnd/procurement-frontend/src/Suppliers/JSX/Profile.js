@@ -12,8 +12,8 @@ export default class Profile extends Component {
         return (
             <div>
                 <SupplierHeader/>
-                <Footer/>
+                <ProfileContent/>
             </div>
         );
     }
-}   
+}  

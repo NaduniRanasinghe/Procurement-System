@@ -13,10 +13,16 @@ import AddOrder from './components/SiteManager/AddOrder'
 import AddDeliveryDetails from './components/SiteManager/AddDeliveryDetails'
 import SiteManagerDashBoard from './components/SiteManager/SiteManagerDashBoard'
 import SupplierHome from './Suppliers/JSX/SupplierHome'
-import Inventory from './Suppliers/JSX/Inventory'
-import InventoryView from './Suppliers/JSX/InventoryView'
+import Delivery from './Suppliers/JSX/Delivery'
+import DeliveryView from './Suppliers/JSX/DeliveryView'
 import Profile from './Suppliers/JSX/Profile'
 import SupplierViewMain from './Suppliers/JSX/SupplierViewOrderMain'
+import ReturnGoodsHome from './Suppliers/JSX/AddReturnGood';
+import AddReturnGoodsHome from './Suppliers/JSX/AddReturnGoodsHome';
+import AddCreditNoteHome from './Suppliers/JSX/AddCreditNoteHome';
+import ReturnGoodsView from './Suppliers/JSX/ReturnGoodsHome';
+import CreditNoteViewHome from './Suppliers/JSX/CreditNoteViewHome';
+import SupplierOrder1Home from './Suppliers/JSX/SupplierOrder1Home';
 ReactDOM.render(
 
     <Router>
@@ -28,14 +34,19 @@ ReactDOM.render(
             <Route  path='/AddItem' component={AddItem} />
             <Route  path='/AddSupplier' component={AddSupplier} />
             <Route path ='/SuppliersHome' component={SupplierHome}/>
-            <Route path ='/Inventory' component={Inventory}/>
-            <Route path ='/InventoryView' component={InventoryView}/>
+            <Route path ='/Delivery' component={Delivery}/>
+            <Route path ='/DeliveryView' component={DeliveryView}/>
             <Route path ='/Profile' component={Profile}/>
             <Route path ='/SupplierViewMain' component ={SupplierViewMain}/>
             <Route  path='/AddItem' component={AddItem}/>
             <Route  path='/SiteManagerDashBoard' component={SiteManagerDashBoard} />
             <Route  path='/AddOrder' component={AddOrder} />
             <Route  path='/AddDeliveryDetails' component={AddDeliveryDetails} />
+            <Route path ='/AddReturnGoodsHome' component ={AddReturnGoodsHome}/>
+            <Route path='/AddCreditNote' component={AddCreditNoteHome}/>
+            <Route path='/ReturnGoodsView' component={ReturnGoodsView}/>
+            <Route path='/CreditNoteView' component={CreditNoteViewHome}/>
+            <Route path ="/SupplierOrderHome" component={SupplierOrder1Home}/>
         </div>
   </Router>
 

@@ -14,33 +14,34 @@ class SupplierHeader extends Component{
     signinButtonHandler = () => {
         this.props.history.push("/Login")
     }
-
+    
     render() {
         return(
                 <div>
-                    <div className="header-blue">
+                    <div className="header-blue" style={{background:'#563d7c'}}>
                         <nav className="navbar navbar-dark navbar-expand-md navigation-clean-search">
                             <div className="container">
-                                <a className="navbar-brand" href="#">Welcome to MAGA ENGINEERING </a>
+                                <h4 className="navBarTitle_procument_dashboard " style={{marginLeft:'-400px',marginTop:'10px'}}>SUPPLIER DASHBOARD</h4>
                                 <button data-toggle="collapse" className="navbar-toggler" data-target="#navcol-1">
                                     <span className="sr-only">  navigation </span>
                                     <span className="navbar-toggler-icon"></span>
                                 </button>
                                 <div className="collapse navbar-collapse" id="navcol-1">
-                                    <ul className="nav navbar-nav">
-                                        <li className="nav-item" role="presentation"><a className="nav-link active" href="/SuppliersHome">Home</a>
+
+                                <ul className="nav navbar-nav" style={{marginTop:'10px'}}>
+                                        <li className="nav-item" role="presentation"><a className="nav-link active" href="/SuppliersHome" ><h5>Home</h5></a>
                                         </li>
                                     </ul>
-                                    <ul className="nav navbar-nav">
-                                        <li className="nav-item" role="presentation"><a className="nav-link active" href="/">Purchase Orders</a>
+                                    <ul className="nav navbar-nav" style={{marginTop:'10px'}}>
+                                        <li className="nav-item" role="presentation"><a className="nav-link active" href="/SupplierViewMain" ><h5>Orders</h5></a>
                                         </li>
                                     </ul>
-                                    <ul className="nav navbar-nav">
-                                        <li className="nav-item" role="presentation"><a className="nav-link active" href="/Profile">Profile</a>
+                                    <ul className="nav navbar-nav" style={{marginTop:'10px'}}>
+                                        <li className="nav-item" role="presentation"><a className="nav-link active" href="/Profile"><h5>Profile</h5></a>
                                         </li>
                                     </ul>
-                                    <ul className="nav navbar-nav">
-                                        <li className="nav-item_two" role="presentation"><a className="nav-link active" href="/">Log Out</a>
+                                    <ul className="nav navbar-nav" style={{marginTop:'10px'}}>
+                                        <li className="nav-item_two" role="presentation"><a className="nav-link active" href="/"><h5>Log Out</h5></a>
                                         </li>
                                     </ul>
                                     <form className="form-inline mr-auto" target="_self">
