@@ -122,6 +122,7 @@ export default class AddReturnGoods extends Component{
                                 placeholder="Return Date"
                                 value={this.state.retDate || ''}
                                 onChange={this.onChangeName}
+                                required
                             />
                         </div>
                         <div style ={{fontSize:12,color:"red"}}>
@@ -135,6 +136,7 @@ export default class AddReturnGoods extends Component{
                                 placeholder="Quantity Available"
                                 value={this.state.retItemName || ''}
                                 onChange={this.onChangeQuanity}
+                                required
                             />
                         </div>
                         <div style ={{fontSize:12,color:"red"}}>
@@ -148,6 +150,7 @@ export default class AddReturnGoods extends Component{
                                 placeholder="Supplier"
                                 value={this.state.supplier || ''}
                                 onChange={this.onChangeSupplier}
+                                required
                             />
                         </div>  
                         <div style ={{fontSize:12,color:"red"}}>
