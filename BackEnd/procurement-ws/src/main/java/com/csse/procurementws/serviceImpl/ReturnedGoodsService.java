@@ -18,7 +18,7 @@ public interface ReturnedGoodsService {
 //
     List<ReturnedGoods> getAllReturnItem();
     
-    void deleteReturnEntry(String retItemId);
+    void deleteReturnEntry(int id);
 
 	
 }

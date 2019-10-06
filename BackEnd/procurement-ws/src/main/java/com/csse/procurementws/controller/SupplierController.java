@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -46,6 +47,20 @@ public class SupplierController {
             return new ResponseEntity<>(supplierList, HttpStatus.OK);
         } catch (Exception ex) {
             Logger logger = LoggerFactory.getLogger(SupplierController.class);
+            logger.error(ex.getMessage());
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    
+    
+    //get the supplier from the id pasan added
+    @RequestMapping(value = "/getsupplier/{id}", method = RequestMethod.GET)
+    public ResponseEntity<Supplier> supplierGetById(@PathVariable(value = "id") Integer id) {
+        try {
+            Supplier supplier = supplierServiceImpl.getSupplierById(id); 
+            return new ResponseEntity<>(supplier, HttpStatus.OK);
+        } catch (Exception ex) {
+            Logger logger = LoggerFactory.getLogger(OrderController.class);
             logger.error(ex.getMessage());
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }

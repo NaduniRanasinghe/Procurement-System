@@ -34,11 +34,10 @@ public class ReturnItemServiceImpl implements ReturnedGoodsService {
         System.out.println("updateweda");
         return returnedGoodsRepository.save(returnedGoods);
     }
-
     @Override
-    public void deleteReturnEntry(String retItemId) {
+    public void deleteReturnEntry(int retItemId) {
 
-        returnedGoodsRepository.deleteById(Integer.parseInt(retItemId));
+        returnedGoodsRepository.deleteById(retItemId);
     }
 
 

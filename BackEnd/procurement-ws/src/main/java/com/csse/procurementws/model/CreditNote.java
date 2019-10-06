@@ -21,6 +21,20 @@ public class CreditNote {
     
     @Column(name = "CREDITNOTE")
     private String creditnote;
+    
+    public CreditNote() {
+    	
+    	
+    }
+    
+
+	public CreditNote(Integer creditNoteId, String returnGoodID, String creditnote) {
+		super();
+		this.creditNoteId = creditNoteId;
+		this.returnGoodID = returnGoodID;
+		this.creditnote = creditnote;
+	}
+
 
 	public Integer getCreditNoteId() {
 		return creditNoteId;

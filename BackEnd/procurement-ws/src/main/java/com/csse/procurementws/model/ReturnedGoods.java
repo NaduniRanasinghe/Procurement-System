@@ -25,7 +25,21 @@ public class ReturnedGoods {
     
     @Column(name = "PRICE")
     private String price;
+    
+
+    public ReturnedGoods() {
+    	
+    	
+    }
    
+	public ReturnedGoods(int retItemId, String retDate, String retItemName, String price) {
+		super();
+		this.retItemId = retItemId;
+		this.retDate = retDate;
+		this.retItemName = retItemName;
+		this.price = price;
+	}
+
 	public int getRetItemId() {
 		return retItemId;
 	}

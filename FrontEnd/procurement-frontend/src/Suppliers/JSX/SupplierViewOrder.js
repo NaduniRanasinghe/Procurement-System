@@ -8,18 +8,21 @@ class SupplierViewOrder extends Component {
         this.onSubmit = this.onSubmit.bind(this);
         this.state = {
             id:'',
-            item_name:'',
-            quantity:'',
-            price:'',
-            inventories: []
+            orderName:'',
+            totalPrice:'',
+            status:'',
+            remark:'',
+            itemList:'',
+            supplier:'',
+            orderslist: []
         }
     }
 
     componentDidMount() {
-        axios.get('http://localhost:8090/Items').then(
+        axios.get('http://localhost:8090/getorders').then(
             data => {
                 this.setState({
-                    inventories: data.data
+                    orderslist: data.data
                 });
             }
         )
@@ -47,19 +50,25 @@ class SupplierViewOrder extends Component {
                 <table className="table">
                     <thead>
                         <th>ID</th>
-                        <th>ITEM NAME</th>
-                        <th>QUANTITY</th>
-                        <th>PRICE E</th>
+                        <th>ORDER NAME</th>
+                        <th>TOTAL PRICE</th>
+                        <th>STATUS</th>
+                        <th>REMARK</th>
+                        <th>ITEM LIST</th>
+                        <th>SUPPLIER NAME</th>
+
                     </thead>
                     <tbody>
                         {
-                            this.state.inventories.map( inventory=> {
+                            this.state.orderslist.map( orders=> {
                                 return (
-                                    <tr key={inventory.id}>
-                                        <td>{inventory.id}</td>
-                                        <td>{inventory.item_name}</td>
-                                        <td>{inventory.quantity}</td>
-                                        <td>{inventory.price}</td>
+                                    <tr key={orders.id}>
+                                        <td>{orders.id}</td>
+                                        <td>{orders.orderName}</td>
+                                        <td>{orders.totalPrice}</td>
+                                        <td>{orders.status}</td>
+                                        <td>{orders.remark}</td>
+                                        <td>{orders.itemList.supplierName}</td>
                                         {/* <td>{cou.lectureInCharge}</td> */}
                                         {/* <td><button onClick={this.viewSubjects.bind(this,cou.subject)}>View Subject Info</button></td>
                                         <td><button onClick={this.calculate.bind(this,cou.subject)}>Cost</button></td> */}
@@ -69,12 +78,12 @@ class SupplierViewOrder extends Component {
                         }
                     </tbody>
                 </table>
-                
                 <form onSubmit={this.onSubmit}>
                 <div className="" style={{}}>
                             <input type="submit" value="GENERATE REPORT" className="btn btn-primary" style={{width:'200px',height:'40px',float:"center",marginBottom:'100px',marginTop:'50px',marginLeft:'400px'}}/>
                 </div>
                 </form>
+
             </div>
 
         )

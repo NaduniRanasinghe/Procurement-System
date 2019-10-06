@@ -1,6 +1,7 @@
 package com.csse.procurementws.controller;
 
 import com.csse.procurementws.model.CommonResponse;
+
 import com.csse.procurementws.model.Order;
 import com.csse.procurementws.serviceImpl.OrderServiceImpl;
 import java.util.List;
@@ -16,6 +17,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import java.util.ArrayList;
+import java.util.List;
+import com.csse.procurementws.serviceImpl.InvoiceReport;
 
 /**
  *
@@ -69,6 +73,24 @@ public class OrderController {
         try {
             orderServiceImpl.saveOrder(order);
             return new ResponseEntity<>(new CommonResponse("SUCSESS", "Order successfully saved"), HttpStatus.OK);
+        } catch (Exception ex) {
+            Logger logger = LoggerFactory.getLogger(OrderController.class);
+            logger.error(ex.getMessage());
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    
+    
+    
+    //generate report
+    @RequestMapping(value = "/printOrderReport", method = RequestMethod.POST)   
+    public ResponseEntity<List<Order>> getOrdersforPrintInvoice() {
+        try {
+            List<Order> orderList = orderServiceImpl.getAllOrders();
+            ArrayList<Order> printAllReport = new ArrayList<>(orderList);
+            InvoiceReport l1 = new InvoiceReport();
+            l1.generateLowStockLevelPdf(printAllReport);
+            return new ResponseEntity<>(orderList, HttpStatus.OK);
         } catch (Exception ex) {
             Logger logger = LoggerFactory.getLogger(OrderController.class);
             logger.error(ex.getMessage());

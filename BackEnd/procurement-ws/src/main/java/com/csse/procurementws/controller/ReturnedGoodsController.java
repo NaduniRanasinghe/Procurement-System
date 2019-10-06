@@ -43,10 +43,11 @@ public class ReturnedGoodsController {
     }
 
     @DeleteMapping("/deleteReturnEntry/{retItemId}")
-    void deleteEmployee(@PathVariable String retItemId) {
+    void deleteEmployee(@PathVariable int retItemId) {
     	returnedGoodsService.deleteReturnEntry(retItemId);
     }
-
+    
+    
     
     //////////////////////////////////////REPORTS////////////////
     @RequestMapping(value = "/printReturnGoodsReport", method = RequestMethod.POST)
