@@ -69,14 +69,14 @@ public class OrderController {
     }
     
     @RequestMapping(value = "/save/order", method = RequestMethod.POST)
-    public ResponseEntity<CommonResponse> saveOrder(@Valid @RequestBody Order order) {
+    public String saveOrder(@Valid @RequestBody Order order) {
         try {
             orderServiceImpl.saveOrder(order);
-            return new ResponseEntity<>(new CommonResponse("SUCSESS", "Order successfully saved"), HttpStatus.OK);
+            return "SUCSESS";
         } catch (Exception ex) {
             Logger logger = LoggerFactory.getLogger(OrderController.class);
             logger.error(ex.getMessage());
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+            return "INTERNAL_SERVER_ERROR";
         }
     }
     

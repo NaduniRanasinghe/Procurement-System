@@ -55,12 +55,12 @@ public class UserController {
     }
     
     @RequestMapping(value = "/save/systemuser", method = RequestMethod.POST)
-    public ResponseEntity<CommonResponse> saveSystemUser(@Valid @RequestBody SystemUser systemUser) {
+    public String saveSystemUser(@Valid @RequestBody SystemUser systemUser) {
         try {
             systemUserServiceImpl.saveUser(systemUser);
-            return new ResponseEntity<>(new CommonResponse("SUCSESS", "Item successfully saved"), HttpStatus.OK);
+            return "SUCSESS";
         } catch (Exception ex) {
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+            return "INTERNAL_SERVER_ERROR";
         }
     }
 }

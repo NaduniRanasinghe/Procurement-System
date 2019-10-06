@@ -31,14 +31,14 @@ public class SiteController {
     
     
         @RequestMapping(value = "/site/save", method = RequestMethod.POST)
-    public ResponseEntity<CommonResponse> saveSite(@Valid @RequestBody Site site) {
+    public String saveSite(@Valid @RequestBody Site site) {
         try {
             siteService.saveSite(site);
-            return new ResponseEntity<>(new CommonResponse("SUCSESS", "Site added successfully"), HttpStatus.OK);
+            return "SUCSESS";
         } catch (Exception ex) {
             Logger logger = LoggerFactory.getLogger(SiteController.class);
             logger.error(ex.getMessage());
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+            return "INTERNAL_SERVER_ERROR";
         }
     }
             

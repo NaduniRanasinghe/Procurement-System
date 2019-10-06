@@ -29,14 +29,14 @@ public class SupplierController {
     SupplierServiceImpl supplierServiceImpl;
     
     @RequestMapping(value = "/supplier/save", method = RequestMethod.POST)
-    public ResponseEntity<CommonResponse> saveSupplier(@Valid @RequestBody Supplier supplier) {
+    public String saveSupplier(@Valid @RequestBody Supplier supplier) {
         try {
             supplierServiceImpl.saveSupplier(supplier);
-            return new ResponseEntity<>(new CommonResponse("SUCSESS", "Item successfully saved"), HttpStatus.OK);
+            return "SUCSESS";
         } catch (Exception ex) {
             Logger logger = LoggerFactory.getLogger(SupplierController.class);
             logger.error(ex.getMessage());
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+            return"INTERNAL_SERVER_ERROR";
         }
     }
             
